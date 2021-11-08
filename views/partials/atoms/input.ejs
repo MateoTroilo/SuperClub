@@ -1,9 +1,9 @@
 <% if (! placeholder) { %>
 <p>Se tiene que asignar un placeholder</p>
-<% } else { %> <% if (searchBar) { %>
+<% } else { %> <% if (type === "search") { %>
 <div class="search-bar">
   <input
-    type="search"
+    type="<%= type %>"
     placeholder="<%= placeholder %>"
     class="search-bar-input"
   />
@@ -12,5 +12,5 @@
   </button>
 </div>
 <% } else {%>
-<input type="text" placeholder="<%= placeholder %>" />
+<input type="<%= type %>" placeholder="<%= placeholder %>" />
 <% }} %>

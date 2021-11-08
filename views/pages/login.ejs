@@ -2,10 +2,38 @@
 <html lang="en">
   <%- include('../partials/head') %>
   <body>
-    <%- include('../partials/header', {showBar: false}) %>
-    <main class="main">
-      <div class="red-rectangle"></div>
-    </main>
-    <footer></footer>
+    <div>
+      <%- include('../partials/header', {showBar: false}) %>
+      <main class="main">
+    
+        <div class="red-rectangle"></div>
+        <div class="login-container">
+          <h2>¡Hola!</h2>
+          <%- include("../partials/atoms/input", {type: "text", placeholder: "Tu nombre de usuario" }) %>
+          <%- include("../partials/atoms/input", {type:
+          "password", placeholder: "Tu contraseña" }) %>
+          <%- include("../partials/atoms/button", {type: "normal", name: "Iniciar Sesión"}) %>
+        </div>
+        <div class="question">
+          <a href="/register">¿No tienes cuenta? <span class="underline">Regístrate</span></a>
+        </div>
+      </main>
+    </div>
+    <footer class="footer">
+      <div class="social-media">
+        <a href="#"><img src="svg/twitter.svg" alt="Twitter"></a>
+        <a href="#"><img src="svg/facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="svg/instagram.svg" alt="Instagram"></a>
+        <a href="#"><img src="svg/youtube.svg" alt="Youtube"></a>
+      </div>
+      <div class="copyright">
+        © Banco Santander S.A. Todos los derechos reservados.
+      </div>
+      <div class="market">
+        <a href="#"><img src="svg/apple.svg" alt="Logo de Apple"> App Store</a>
+        <a href="#"><img src="svg/google-play.svg" alt="Google Play"> Google Play</a>
+        
+      </div>
+    </footer>
   </body>
 </html>

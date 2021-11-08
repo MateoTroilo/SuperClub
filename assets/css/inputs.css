@@ -1,19 +1,21 @@
 input {
   width: auto;
-  height: 32px;
+  height: 3.2rem;
   border-radius: 1.6rem;
   padding: 0.8rem 1.6rem;
   color: var(--gris);
+  font-family: "Open Sans", sans-serif;
   background: rgba(255, 255, 255, 1);
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
   border: 0.1rem solid var(--gris);
 }
 
 input::placeholder {
   font-weight: 500;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   color: var(--gris);
 }
 
@@ -38,7 +40,6 @@ input:focus {
 }
 
 .search-bar-input {
-  font-family: "Open Sans", sans-serif;
   font-size: 1.6rem;
   height: 3rem;
   width: 100%;
