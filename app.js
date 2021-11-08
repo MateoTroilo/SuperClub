@@ -6,7 +6,9 @@ const port = 3000
 app.use(express.static('assets'))
 app.set('view engine', 'ejs')
 
-app.get('/', (_, res) => res.render('pages/index', { productos }))
+app.get('/', (_, res) =>
+  res.render('pages/index', { teinteresan: productos.slice(0, 4), lomaspedido: productos })
+)
 app.get('/cart', (_, res) => res.render('pages/cart'))
 app.get('/checkout', (_, res) => res.render('pages/checkout'))
 app.get('/contact', (_, res) => res.render('pages/contact'))
