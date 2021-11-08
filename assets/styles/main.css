@@ -29,7 +29,7 @@ body{
     background-color: white;
     width: 320px;
     height: 296px;  
-    border-radius: 1rem;
+    border-radius: 16px;
     margin: auto;
     margin-top: -10rem;
     display: flex;
