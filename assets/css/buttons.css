@@ -1,0 +1,47 @@
+.btn-user,
+.btn-profile,
+.btn-cart,
+.btn {
+  font-family: "Open Sans", sans-serif;
+  width: auto;
+  height: 3.2rem;
+  background: rgba(73, 79, 81, 1);
+  border-radius: 1.6rem;
+  padding: 0.8rem 1.6rem;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.btn,
+.btn-cart {
+  justify-content: center;
+}
+
+.btn-user,
+.btn-profile {
+  justify-content: space-between;
+}
+
+.btn-cart {
+  width: 3.2rem;
+}
+
+.btn:hover,
+.btn-user:hover,
+.btn-profile:hover,
+.btn-cart:hover {
+  background: rgba(236, 0, 0, 1);
+}
+
+.btn-profile {
+  padding-left: 0;
+}
+
+.profile-pic {
+  width: 3.2rem;
+  height: 3.2rem;
+  padding: 0.4rem;
+}
