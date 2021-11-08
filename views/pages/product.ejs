@@ -20,24 +20,66 @@
     </head>
     <body class="body">
         <header>Header de Agus</header>
-        <section>
-            <h3>
-                <i class="fas fa-arrow-left"></i>Volver al listado<i
-                    class="fas fa-chevron-right"
-                ></i
-                >alimentos
-            </h3>
-            <%= id%>
-            <div>
-                <img class="recortada" width="5%" src="/img/havanna1.jpg" />
-                <img class="recortada" width="5%" src="/img/havanna2.jpg" />
-                <img class="recortada" width="5%" src="/img/havanna3.webp" />
+        <div class="ruta">
+            <i class="fas fa-arrow-left"></i> Volver al listado
+            <i class="fas fa-chevron-right"></i> alimentos
+        </div>
+        <section class="producto">
+            <div class="mini-imgs">
+                <img
+                    class="recortada"
+                    width="48px"
+                    height="48px"
+                    src="/img/havanna1.jpg"
+                />
+                <img
+                    class="recortada"
+                    id="marcada"
+                    width="48px"
+                    height="48px"
+                    src="/img/havanna2.jpg"
+                />
+                <img
+                    class="recortada"
+                    width="48px"
+                    height="48px"
+                    src="/img/havanna3.webp"
+                />
             </div>
-            <div><img src="/img/havanna2.jpg" /></div>
-            <h2>
-                Alfajores Havanna <br />
-                Chocolate 12 Unidades
-            </h2>
+            <img src="/img/havanna2.jpg" class="imagengrande" />
+            <div class="productodescripto">
+                <h3 class="nombre">
+                    Alfajores Havanna <br />
+                    Chocolate 12 Unidades
+                </h3>
+                <div class="puntoyprecio">
+                    <strong class="precio">19.900</strong>
+                    <div class="puntos">PUNTOS <br />SUPERCLUB</div>
+                </div>
+                <div class="carrito">Agregar al Carrito</div>
+
+                <p class="descripcion">
+                    Voucher válido para una caja de 12 alfajores mixtos
+                    Havanna.<br />
+                    Para retirar el producto, sólo tenés que presentar el
+                    comprobante del canje en el local. Recordá que tus
+                    comprobantes de canje siempre quedan guardados en la opción
+                    "Detalle de puntos". <br /><br />
+
+                    El voucher no es válido para delivery pero sí para Take
+                    away.<br /><br />
+                    No aplica para alfajores sabos "70 Cacao" o "Semilia".<br /><br />
+                    Consultá tus locales con take away en
+                    https://ticketbox.com.ar/sucursales/havanna.<br /><br />El
+                    canje del voucher se encuentra sujeto a disponibilidad del
+                    producto en el local. No combinable con otras
+                    promociones.<br /><br />Vigencia hasta 28/02/2022 o hasta
+                    agotar stock.
+                </p>
+            </div>
+        </section>
+        <section>
+            <h2>Tambien te puede interesar</h2>
         </section>
     </body>
 </html>
