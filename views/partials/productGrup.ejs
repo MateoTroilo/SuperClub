@@ -1,0 +1,5 @@
+<div class="contianerProductGrup">
+    <% productos?.forEach({ name, point, image, id } => { %>
+        <%- include("./productCard.ejs", {name, point, image, id}) %>
+    <% }) %>
+</div>
