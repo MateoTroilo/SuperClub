@@ -1,0 +1,8 @@
+
+
+.img{
+    background-image: url("../svg/santanderLogo.svg");
+    background-repeat: no-repeat;
+    height: 2rem;
+    margin: 1rem;
+}
