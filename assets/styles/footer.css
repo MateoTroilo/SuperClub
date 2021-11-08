@@ -1,6 +1,6 @@
 footer{
     font-size: 24px;
-    height: 5rem;
+    height: 64px;
     display: flex;
     align-items: center;
     border-top: 1px solid grey;
@@ -12,11 +12,12 @@ footer{
 
 .red-social{
    margin-right: 8px;
+   font-size: 24px;
 }
 
 .plataforma{
     display: flex;
-   
+    align-items: center;
 }
 
 
@@ -24,6 +25,16 @@ footer{
     margin-right: 8px;
 }
 
-.footer-text{
+.footer-text {
+    
     margin: auto;
+}
+
+.text{
+    font-size: 24px;
+}
+
+
+.p {
+    font-size: 24px;
 }
