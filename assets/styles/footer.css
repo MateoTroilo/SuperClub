@@ -1,24 +1,29 @@
 footer{
-    font-size: 1.5rem;
+    font-size: 24px;
     height: 5rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0rem 9rem;
     border-top: 1px solid grey;
-    margin-top: 19rem;  /*ESTA MAAAAALLLLLL*/
     background-color:rgb(226, 226, 226);
     color: grey;
+    white-space:nowrap;
+    padding: 0px 16px
 }
 
 .red-social{
-    margin-right: 1rem;
+   margin-right: 8px;
 }
 
 .plataforma{
     display: flex;
+   
 }
 
-p{
-    margin-right: 0.5rem;
+
+.p-app{
+    margin-right: 8px;
+}
+
+.footer-text{
+    margin: auto;
 }
