@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./styles/styles.css" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <% let price, priceTotal = 0, cant = 1 %>
+        <section class="cart">
+            <a class="back-button" href="/">
+                <i class="fas fa-arrow-left"></i> Volver
+            </a>
+            <strong class="title-cart">Productos en tu Carrito</strong>
+            <% productos.forEach(producto => { %>
+            <article class="article-cart">
+                <div class="product-cart">
+                    <img src="<%= producto.img %>" class="img-cart" />
+                    <p><%= producto.name %></p>
+                </div>
+                <div class="manage-cart">
+                    <button class="delete-button">Quitar</button>
+                    <div class="cant-bar">
+                        <strong class="edit-cant" id="minus-cant"
+                            ><i class="fas fa-minus"></i
+                        ></strong>
+                        <p><%= cant %></p>
+                        <strong class="edit-cant" id="plus-cant"
+                            ><i class="fas fa-plus"></i
+                        ></strong>
+                    </div>
+                    <% price = cant * producto.price %>
+                    <strong class="price-cart"
+                        ><%= price.toLocaleString() %></strong
+                    >
+                    <% priceTotal += price %>
+                </div>
+            </article>
+            <% }) %>
+            <div class="points-cart">
+                <strong>Total de Puntos SuperClub</strong>
+                <strong class="price-total-cart"
+                    ><%= priceTotal.toLocaleString() %>
+                </strong>
+            </div>
+            <button class="buy-button">
+                <a href="" class="link-button"> Ir a pagar</a>
+            </button>
+        </section>
+    </body>
+</html>
