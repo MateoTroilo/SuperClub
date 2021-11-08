@@ -15,7 +15,7 @@
     <body>
         <% let price, priceTotal = 0, cant = 1 %>
         <section class="cart">
-            <a class="back-button" href="/">
+            <a class="back-link" href="/">
                 <i class="fas fa-arrow-left"></i> Volver
             </a>
             <p class="title-cart">Productos en tu Carrito</p>
@@ -27,10 +27,10 @@
                         class="img-cart"
                         id="producto-<%= producto.id %>"
                     />
-                    <p><%= producto.name %></p>
+                    <p class="product-name-cart"><%= producto.name %></p>
                 </div>
                 <div class="manage-cart">
-                    <button class="delete-button">Quitar</button>
+                    <button class="delete-button button-cart">Quitar</button>
                     <div class="cant-bar">
                         <button class="edit-cant" id="minus-cant">
                             <i class="fas fa-minus"></i>
@@ -48,14 +48,25 @@
                 </div>
             </article>
             <% }) %>
+            <form action="/" method="get" class="discount-cart">
+                <label for="discount"> Ingrese su código de descuento! </label>
+                <input
+                    type="text"
+                    class="input-discount"
+                    name="input-discount"
+                    id="input-discount"
+                    placeholder="Ingrese su código"
+                />
+                <button class="validate-discount button-cart">Validar</button>
+            </form>
             <div class="points-cart">
                 <p>Total de Puntos SuperClub</p>
                 <strong class="price-total-cart"
                     ><%= priceTotal.toLocaleString() %>
                 </strong>
             </div>
-            <button class="buy-button">
-                <a href="" class="link-button"> Ir a pagar</a>
+            <button class="buy-button button-cart">
+                <a href="" class="link-button button-cart"> Ir a pagar</a>
             </button>
         </section>
     </body>
