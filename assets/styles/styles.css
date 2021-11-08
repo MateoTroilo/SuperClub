@@ -1,0 +1,16 @@
+:root {
+    --Gris: rgba(153, 153, 153, 1);
+    --GrisOscuro: rgba(73, 79, 81, 1) ​;
+    --Rojo: rgba(236, 0, 0, 1) ​;
+    --Negro: rgba(0, 0, 0, 1) ​;
+}
+.body {
+    font-family: "Roboto", sans-serif;
+}
+.recortada {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 5%;
+    border: 1px solid rgba(236, 0, 0, 1);
+}
