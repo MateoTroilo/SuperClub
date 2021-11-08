@@ -13,6 +13,13 @@
 .logo {
   height: 2.4rem;
   width: 13.6rem;
+  margin-right: 4rem;
+}
+
+.cart-user {
+  display: flex;
+  gap: 0.8rem;
+  margin-left: 5.6rem;
 }
 
 .red-rectangle {

@@ -2,7 +2,6 @@ input {
   width: auto;
   height: 3.2rem;
   border-radius: 1.6rem;
-  padding: 0.8rem 1.6rem;
   color: var(--gris);
   font-family: "Open Sans", sans-serif;
   background: rgba(255, 255, 255, 1);
@@ -11,6 +10,7 @@ input {
 input[type="text"],
 input[type="password"] {
   border: 0.1rem solid var(--gris);
+  padding: 0.8rem 1.6rem;
 }
 
 input::placeholder {
@@ -28,7 +28,8 @@ input:focus {
 }
 
 .search-bar {
-  width: auto;
+  width: 100%;
+  margin: auto;
   height: 3.2rem;
   border-radius: 1.6rem;
   padding: 0.8rem 1.6rem;

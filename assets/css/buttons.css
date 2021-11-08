@@ -1,6 +1,7 @@
-.button-user,
-.button-profile,
-.button {
+.btn-user,
+.btn-profile,
+.btn-cart,
+.btn {
   font-family: "Open Sans", sans-serif;
   width: auto;
   height: 3.2rem;
@@ -14,22 +15,28 @@
   font-weight: 300;
 }
 
-.button {
+.btn,
+.btn-cart {
   justify-content: center;
 }
 
-.button-user,
-.button-profile {
+.btn-user,
+.btn-profile {
   justify-content: space-between;
 }
 
-.button:hover,
-.button-user:hover,
-.button-profile:hover {
+.btn-cart {
+  width: 3.2rem;
+}
+
+.btn:hover,
+.btn-user:hover,
+.btn-profile:hover,
+.btn-cart:hover {
   background: rgba(236, 0, 0, 1);
 }
 
-.button-profile {
+.btn-profile {
   padding-left: 0;
 }
 

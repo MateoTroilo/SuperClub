@@ -1,10 +1,12 @@
 <% if(type === "profile") { %>
-<button class="button-profile">
+<button class="btn-profile">
   <img src="<%= image %> " alt="Imagen de perfil" class="profile-pic" />
   <%= name %>
 </button>
 <% } else if (type === "user") { %>
-<button class="button-user"><%= name %></button>
+<button class="btn-user"><%= name %></button>
 <% } else if (type === "normal") { %>
-<button class="button" type="submit"><%= name %></button>
-<% } %> 
+<button class="btn" type="submit"><%= name %></button>
+<% } else if (type == "cart"){ %>
+  <button class= "btn-cart"><img src="svg/cart.svg" alt="Carrito"></button>
+  <% } %> 
