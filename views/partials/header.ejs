@@ -1,0 +1,6 @@
+<header class="header">
+  <img src="svg/santanderLogo.svg" alt="Logo de Santander" class="logo" />
+  <% if(showBar) { %> <%- include("../partials/atoms/input", {searchBar: false,
+  placeholder: "InputValue"}) %> <%- include("../partials/atoms/button",
+  {profilePic: true, image, name}) %> <% } %>
+</header>

@@ -1,0 +1,16 @@
+<% if (! placeholder) { %>
+<p>Se tiene que asignar un placeholder</p>
+<% } else { %> <% if (searchBar) { %>
+<div class="search-bar">
+  <input
+    type="search"
+    placeholder="<%= placeholder %>"
+    class="search-bar-input"
+  />
+  <button class="search-bar-btn">
+    <img src="svg/magnify.svg" />
+  </button>
+</div>
+<% } else {%>
+<input type="text" placeholder="<%= placeholder %>" />
+<% }} %>
