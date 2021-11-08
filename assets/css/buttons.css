@@ -26,6 +26,7 @@
 }
 
 .btn-cart {
+  position: relative;
   width: 3.2rem;
 }
 
@@ -44,4 +45,21 @@
   width: 3.2rem;
   height: 3.2rem;
   padding: 0.4rem;
+}
+
+.cart-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: var(--blanco);
+  background-color: rgba(236, 0, 0, 1);
+  border-radius: 0.4rem;
+  width: 1.2rem;
+  height: 0.8rem;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
