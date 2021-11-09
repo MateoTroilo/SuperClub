@@ -1,10 +1,12 @@
 <link rel="stylesheet" href="./styles/styles.css" />
-<%- include("../partials/head.ejs")
-%> <%- include("../partials/header.ejs", {showBar: true}) %> <%-
-include("../partials/categoriesMenu.ejs") %>
-<h1>te puede interesar</h1>
-<%- include("../partials/productGrup.ejs", { productos: teinteresan}) %>
-<h1>Lo mas pedido</h1>
-<%- include("../partials/productGrup.ejs", { productos: lomaspedido}) %> <%-
-include("../partials/categoriesMenu.ejs") %> <%-
-include("../partials/footer.ejs") %>
+<%- include("../partials/head.ejs") %> <%- include("../partials/header.ejs",
+{showBar: true}) %>
+<main>
+  <%- include("../partials/categoriesMenu.ejs") %>
+  <h1>te puede interesar</h1>
+  <%- include("../partials/productGrup.ejs", { productos: teinteresan}) %>
+  <h1>Lo mas pedido</h1>
+  <%- include("../partials/productGrup.ejs", { productos: lomaspedido}) %> <%-
+  include("../partials/categoriesMenu.ejs") %>
+</main>
+<%- include("../partials/footer.ejs") %>
