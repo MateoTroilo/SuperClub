@@ -5,10 +5,9 @@
 </button>
 <% } else if (type === "user") { %>
 <button class="btn-user"><%= name %></button>
-<% } else if (type === "normal") { %>
-<button class="btn" type="submit"><%= name %></button>
 <% } else if (type == "cart"){ %>
-  <button class= "btn-cart"><img src="svg/cart.svg" alt="Carrito">
-    <%- include("./cart-badge", {quantity: 3}) %>
-  </button>
-  <% } %> 
+<button class="btn-cart">
+  <img src="svg/cart.svg" alt="Carrito" />
+  <%- include("./cart-badge", {quantity: 3}) %>
+</button>
+<% } %>

@@ -1,7 +1,4 @@
-.btn-user,
-.btn-profile,
-.btn-cart,
-.btn {
+button {
   font-family: "Open Sans", sans-serif;
   width: auto;
   height: 3.2rem;
@@ -15,8 +12,7 @@
   font-weight: 300;
 }
 
-.btn,
-.btn-cart {
+button {
   justify-content: center;
 }
 
@@ -30,10 +26,7 @@
   width: 3.2rem;
 }
 
-.btn:hover,
-.btn-user:hover,
-.btn-profile:hover,
-.btn-cart:hover {
+button:hover {
   background: rgba(236, 0, 0, 1);
 }
 
