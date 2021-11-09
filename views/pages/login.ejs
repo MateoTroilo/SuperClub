@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+  <body>
+    <div>
+      <%- include('../partials/header', {showBar: false}) %>
+      <main class="main">
+        <div class="red-rectangle"></div>
+        <form action="/", class="login-container">
+            <h2>¡Hola!</h2>
+            <%- include("../partials/atoms/input", {type: "text", placeholder: "Tu nombre de usuario", name:"user_name"}) %>
+            <%- include("../partials/atoms/input", {type:"password", placeholder: "Tu contraseña", name:"user_password"}) %>
+            <%- include("../partials/atoms/button", {type: "normal", name: "Iniciar Sesión"}) %>
+          </form>
+        <div class="question">
+          <a href="/register">¿No tienes cuenta? <span class="underline">Regístrate</span></a>
+        </div>
+      </main>
+    </div>
+    <%- include("../partials/footer") %> 
+  </body>
+</html>
