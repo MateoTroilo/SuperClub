@@ -22,7 +22,7 @@
     width: 1024px;
     display: flex;
     flex-direction: row;
-    border-radius: 16;
+    border-radius: 16px;
     background-color: #ffffff;
 }
 
@@ -42,7 +42,8 @@
     border: 2px solid rgba(236, 0, 0, 1);
 }
 .nombre {
-    margin-left: 8px;
+    margin: 0 0 8px 0;
+    font-size: 24px;
 }
 .productodescripto {
     padding: 8px;
@@ -52,6 +53,7 @@
     border-radius: 16px;
 }
 .puntoyprecio {
+    margin-top: 8px;
     justify-content: flex-start;
     display: flex;
     align-items: center;
@@ -66,11 +68,14 @@
     font-size: 16px;
 }
 .descripcion {
-    margin-left: 8px;
+    text-align: left;
     display: flex;
+    line-height: 16, 34px;
     font-size: 12px;
 }
 .carrito {
+    margin-bottom: 24px;
+    margin-top: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
