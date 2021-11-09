@@ -54,8 +54,9 @@
 .product-cart {
     margin-left: 0.8rem;
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
+    overflow: hidden;
 }
 
 .img-cart {
@@ -65,6 +66,11 @@
     top: 0.8rem;
     border-radius: 0.8rem;
     object-fit: cover;
+}
+
+#product-2 {
+    object-fit: contain;
+    transform: scale(1.4);
 }
 
 #product-3 {
