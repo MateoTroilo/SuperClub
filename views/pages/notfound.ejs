@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head") %>
+  <body>
+    <%- include("../partials/header", {showBar: true}) %>
+    <main>
+      <h2 class="notfound-title">Error 404: Artículo no encontrado</h2>
+
+      <button class="btn-home">Volver a home</button>
+      <section>
+        <%- include('../partials/productGrup', {productos:
+        productos.slice(0,4),title:"También te puede interesar"}) %>
+      </section>
+    </main>
+    <%- include("../partials/footer") %>
+  </body>
+</html>
