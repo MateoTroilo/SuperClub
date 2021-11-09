@@ -1,0 +1,6 @@
+<link rel="stylesheet" href="/styles/productGrup.css" />
+<div class="contianerProductGrup">
+  <h3><%= title %> </h3>
+  <% productos.forEach(({ name, price, img, id }) => { %> <%-
+  include("./productCard.ejs", {name, price, img, id}) %> <% }) %>
+</div>
