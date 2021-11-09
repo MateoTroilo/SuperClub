@@ -6,13 +6,13 @@
     <body>
       <main class="mainHome">
         <%- include("../partials/categoriesMenu.ejs") %> <%-
-        include("../partials/productHeroGrup.ejs", { heros }) %>
+        include("../partials/productHeroGroup.ejs", { heros }) %>
         <div class="homeProduxBox">
-          <%- include("../partials/productGrup.ejs", { productos: teinteresan,
+          <%- include("../partials/productGroup.ejs", { productos: teinteresan,
           title:"Te puede interesar"}) %>
         </div>
         <div class="homeProduxBox">
-          <%- include("../partials/productGrup.ejs", { productos: lomaspedido,
+          <%- include("../partials/productGroup.ejs", { productos: lomaspedido,
           title:"Lo mas pedido"}) %>
         </div>
         <%- include("../partials/categoriesMenu.ejs") %>

@@ -1,4 +1,4 @@
-.productHeroGrup {
+.productHeroGroup {
   height: 280px;
   width: 100%;
   position: relative;
@@ -9,7 +9,7 @@
   margin-top: 40px;
 }
 
-.productHeroGrup::after {
+.productHeroGroup::after {
   content: '';
   position: absolute;
   bottom: 0;
