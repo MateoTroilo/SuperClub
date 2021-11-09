@@ -17,7 +17,6 @@ app.get("/checkout", (_, res) => res.render("pages/checkout"));
 app.get("/contact", (_, res) => res.render("pages/contact"));
 app.get("/login", (_, res) => res.render("pages/login"));
 app.get("/register", (_, res) => res.render("pages/register"));
-app.get("/notfound", (_, res) => res.render("pages/notfound", { productos }));
 app.get("/", (_, res) =>
   res.render("pages/index", {
     teinteresan: productos.slice(0, 4),
@@ -28,4 +27,5 @@ app.get("/", (_, res) =>
   })
 );
 
+app.get("*", (_, res) => res.render("pages/notfound", { productos }));
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

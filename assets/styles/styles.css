@@ -382,7 +382,8 @@ body {
 button,
 .btn-cart,
 .btn-lr,
-.btn-agregar {
+.btn-agregar,
+.btn-home {
   font-family: "Open Sans", sans-serif;
   width: auto;
   height: 3.2rem;
@@ -417,7 +418,8 @@ button,
 button:hover,
 .btn-cart:hover,
 .btn-lr:hover,
-.btn-agregar:hover {
+.btn-agregar:hover,
+.btn-home:hover {
   background: rgba(236, 0, 0, 1);
 }
 
@@ -888,6 +890,12 @@ h1 {
   margin-bottom: 5rem;
 }
 
+.main-notfound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .btn-home {
-  margin: auto;
+  width: 12rem;
 }

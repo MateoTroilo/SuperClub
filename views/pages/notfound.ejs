@@ -3,10 +3,9 @@
   <%- include("../partials/head") %>
   <body>
     <%- include("../partials/header", {showBar: true}) %>
-    <main>
+    <main class="main-notfound">
       <h2 class="notfound-title">Error 404: Artículo no encontrado</h2>
-
-      <button class="btn-home">Volver a home</button>
+      <a href="/" class="btn-home">Volver a home</a>
       <section>
         <%- include('../partials/productGrup', {productos:
         productos.slice(0,4),title:"También te puede interesar"}) %>
