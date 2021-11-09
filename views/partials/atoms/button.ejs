@@ -1,0 +1,13 @@
+<% if(type === "profile") { %>
+<button class="btn-profile">
+  <img src="<%= image %> " alt="Imagen de perfil" class="profile-pic" />
+  <%= name %>
+</button>
+<% } else if (type === "user") { %>
+<button class="btn-user"><%= name %></button>
+<% } else if (type == "cart"){ %>
+<button class="btn-cart">
+  <img src="svg/cart.svg" alt="Carrito" />
+  <%- include("./cart-badge", {quantity: 3}) %>
+</button>
+<% } %>

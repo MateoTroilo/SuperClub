@@ -2,7 +2,8 @@ const express = require("express");
 const productos = require("./productos.js");
 const app = express();
 const port = 3000;
-const path = require("path");
+
+console.clear();
 
 app.use(express.static("assets"));
 app.set("view engine", "ejs");
@@ -18,7 +19,4 @@ app.get("/product/:id", (req, res) => {
 app.get("/login", (_, res) => res.render("pages/login"));
 app.get("/register", (_, res) => res.render("pages/register"));
 
-app.listen(port, () =>
-    console.log(`Example app listening on port ${port}!
-${path.join(__dirname, "assets")}`)
-);
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
