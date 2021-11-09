@@ -806,3 +806,64 @@ input:focus {
 .button-cart:hover {
     background-color: rgba(236, 0, 0, 1);
 }
+
+/* main register */
+
+*, *:before, *:after{
+    box-sizing: border-box;
+}
+  
+
+
+.red{
+    background-color: rgba(236, 0, 0, 1);
+    height: 30vh;
+    width: 100vw;
+}
+
+.register{
+    background-color: white;
+    width: 320px;
+    height: 296px;  
+    border-radius: 16px;
+    margin: auto;
+    margin-top: -22rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: stretch;
+    justify-content: center;
+    padding: 48px 32px;  
+    box-shadow: 0px 5px 5px 0px #888888;
+}
+
+.texto-register{
+    text-align: center;
+    font-size: 12px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+.register, h1{
+    color: rgba(0, 0, 0, 1);
+    font-size: 32px;
+    margin-bottom: 2rem;
+}
+.register-input{
+    margin-bottom: 0.8rem;
+    border-radius: 2rem;
+    color: rgba(153, 153, 153, 1);
+    padding: 8px 16px;
+    border: 1px solid rgba(153, 153, 153, 1);
+}
+
+
+.register-button{
+    background-color: rgba(73, 79, 81, 1);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 2rem;  
+}
+
