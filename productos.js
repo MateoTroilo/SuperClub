@@ -1,51 +1,21 @@
 const productos = [
     {
-        id: 1,
+        id: 2,
         name: "1 Combo Mega Cuarto Deluxe en Mostaza",
         img: "/img/mostaza1.jpg",
         price: "10.000",
     },
     {
-        id: 14,
+        id: 1,
         name: "Alfajores Havanna Chocolate 12 un.",
         img: "/img/havanna1.jpg",
         price: "19.900",
     },
     {
-        id: 13,
+        id: 3,
         name: "Voucher de $400 en Plataforma 10",
         img: "/img/plataforma101.jpg",
         price: "11.500",
-    },
-    {
-        id: 12,
-        name: "NOMBRE DE PRODUCTO O SERVICIO",
-        img: "/img/not_found.png",
-        price: "XX.XXX",
-    },
-    {
-        id: 11,
-        name: "NOMBRE DE PRODUCTO O SERVICIO",
-        img: "/img/not_found.png",
-        price: "XX.XXX",
-    },
-    {
-        id: 17,
-        name: "NOMBRE DE PRODUCTO O SERVICIO",
-        img: "/img/not_found.png",
-        price: "XX.XXX",
-    },
-    {
-        id: 18,
-        name: "NOMBRE DE PRODUCTO O SERVICIO",
-        img: "/img/not_found.png",
-        price: "XX.XXX",
-    },
-    {
-        id: 19,
-        name: "NOMBRE DE PRODUCTO O SERVICIO",
-        img: "/img/not_found.png",
-        price: "XX.XXX",
     },
 ];
 
