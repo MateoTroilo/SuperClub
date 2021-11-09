@@ -1,73 +1,72 @@
 <html>
+    <%- include('../partials/head') %>
     <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-            rel="stylesheet"
-        />
         <link rel="stylesheet" href="./styles/styles.css" />
     </head>
-    <body>
-        <% let price, priceTotal = 0, cant = 1 %>
-        <section class="cart">
+    <body class="body-cart">
+        <%- include('../partials/header', {showBar: true}) %> <% let price,
+        priceTotal = 0, cant = 1 %>
+        <main class="main main-cart">
             <a class="back-link" href="/">
                 <i class="fas fa-arrow-left"></i> Volver
             </a>
-            <p class="title-cart">Productos en tu Carrito</p>
-            <% productos.forEach(producto => { %>
-            <article class="article-cart">
-                <div class="product-cart">
-                    <img
-                        src="<%= producto.img %>"
-                        class="img-cart"
-                        id="product-<%= producto.id %>"
-                    />
-                    <p class="product-name-cart"><%= producto.name %></p>
-                </div>
-                <div class="manage-cart">
-                    <button class="delete-button button-cart">Quitar</button>
-                    <div class="cant-bar">
-                        <button class="edit-cant" id="minus-cant">
-                            <i class="fas fa-minus"></i>
-                        </button>
-                        <p><%= cant %></p>
-                        <button class="edit-cant" id="plus-cant">
-                            <i class="fas fa-plus"></i>
-                        </button>
+            <section class="cart">
+                <p class="title-cart">Productos en tu Carrito</p>
+                <% productos.forEach(producto => { %>
+                <article class="article-cart">
+                    <div class="product-cart">
+                        <img
+                            src="<%= producto.img %>"
+                            class="img-cart"
+                            id="product-<%= producto.id %>"
+                        />
+                        <p class="product-name-cart"><%= producto.name %></p>
                     </div>
-                    <% price = cant * producto.price %>
-                    <strong class="price-cart"
-                        ><%= price.toLocaleString() %></strong
-                    >
-                    <% priceTotal += price %>
+                    <div class="manage-cart">
+                        <button class="delete-button button-cart">
+                            Quitar
+                        </button>
+                        <div class="cant-bar">
+                            <button class="edit-cant" id="minus-cant">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <p><%= cant %></p>
+                            <button class="edit-cant" id="plus-cant">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <% price = cant * producto.price %>
+                        <strong class="price-cart"
+                            ><%= price.toLocaleString() %></strong
+                        >
+                        <% priceTotal += price %>
+                    </div>
+                </article>
+                <% }) %>
+                <form action="/" method="get" class="discount-cart">
+                    <label for="discount" class="discount">
+                        Ingrese su código de descuento!
+                    </label>
+                    <input
+                        type="text"
+                        class="input-discount"
+                        name="input-discount"
+                        id="input-discount"
+                        placeholder="Ingrese su código"
+                    />
+                    <button class="validate-discount button-cart">
+                        Validar
+                    </button>
+                </form>
+                <div class="points-cart">
+                    <p>Total de Puntos SuperClub</p>
+                    <strong class="price-total-cart"
+                        ><%= priceTotal.toLocaleString() %>
+                    </strong>
                 </div>
-            </article>
-            <% }) %>
-            <form action="/" method="get" class="discount-cart">
-                <label for="discount"> Ingrese su código de descuento! </label>
-                <input
-                    type="text"
-                    class="input-discount"
-                    name="input-discount"
-                    id="input-discount"
-                    placeholder="Ingrese su código"
-                />
-                <button class="validate-discount button-cart">Validar</button>
-            </form>
-            <div class="points-cart">
-                <p>Total de Puntos SuperClub</p>
-                <strong class="price-total-cart"
-                    ><%= priceTotal.toLocaleString() %>
-                </strong>
-            </div>
-            <button class="buy-button button-cart">
-                <a href="" class="link-button button-cart"> Ir a pagar</a>
-            </button>
-        </section>
+                <button class="buy-button button-cart">Ir a pagar</button>
+            </section>
+        </main>
+        <%- include('../partials/footer') %>
     </body>
 </html>

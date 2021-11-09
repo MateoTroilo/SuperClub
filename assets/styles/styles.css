@@ -1,19 +1,10 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-html {
-    font-size: 10px;
+.body-cart {
+    gap: 1.5rem;
 }
 
-body {
-    min-height: 100vh;
-    background-color: #efefef;
-    font-family: "Open Sans", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1.4rem;
+.main-cart {
+    display: flex;
+    flex-direction: column;
 }
 
 /* carrito entero */
@@ -30,25 +21,20 @@ body {
 /* titulo carrito*/
 .title-cart,
 .back-link {
-    align-self: flex-start;
     text-decoration: none;
     color: black;
 }
 
 .title-cart {
+    align-self: flex-start;
     font-size: 2.4rem;
     margin: 0.5rem 0;
 }
 
 .back-link {
+    width: 80%;
+    margin: auto;
     font-size: 1.6rem;
-}
-
-/* form carrito */
-.form-cart {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
 }
 
 /* cada articulo */
@@ -126,9 +112,14 @@ body {
 .edit-cant {
     font-size: 0.5rem;
     background-color: transparent;
+    color: black;
     padding: 1rem 1rem;
     border: none;
     outline: none;
+}
+
+.edit-cant:hover {
+    background-color: transparent;
 }
 
 .price-cart {
@@ -145,9 +136,8 @@ body {
 .discount-cart {
     margin: 1rem 0;
     height: 7rem;
-    width: 100%;
-    max-width: 50.4rem;
     display: flex;
+    gap: 1rem;
     justify-content: space-around;
     align-items: center;
     background: #ffffff;
@@ -155,12 +145,13 @@ body {
     border-radius: 1.6rem;
 }
 
-.input-discount {
-    height: 3.2rem;
-    background: #ffffff;
-    border: 0.1rem solid rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-    border-radius: 1.6rem;
+.discount,
+.validate-discount {
+    margin: 0 1rem;
+}
+
+.discount {
+    font-size: 1.6rem;
 }
 
 .points-cart {
@@ -168,15 +159,8 @@ body {
     gap: 2rem;
     align-items: center;
     justify-content: center;
-    margin: 0 1rem;
+    margin: 2.4rem 1rem;
     font-size: 2.4rem;
-}
-
-.link-button {
-    text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    background-color: transparent;
 }
 
 .buy-button {
