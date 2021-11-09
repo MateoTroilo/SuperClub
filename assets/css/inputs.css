@@ -73,5 +73,6 @@ input:focus {
 }
 
 .search-bar-btn:hover {
+  background-color: transparent;
   cursor: pointer;
 }
