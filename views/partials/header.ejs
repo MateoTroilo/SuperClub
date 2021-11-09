@@ -1,13 +1,13 @@
 <header class="header">
-  <a href="/">
-    <img src="svg/santanderLogo.svg" alt="Logo de Santander" class="logo"
-  /></a>
-  <% if(showBar) { %> <%- include("../partials/atoms/input", {type: "search",
-  placeholder: "Buscar productos..."}) %>
-  <div class="cart-user">
-    <%- include("../partials/atoms/button", {type:"cart"}) %> <%-
-    include("../partials/atoms/button", {type:"profile", image:
-    "img/profile-pic.png", name: "Olivia"}) %>
-  </div>
-  <% } %>
+    <a href="/">
+        <img src="/svg/santanderLogo.svg" alt="Logo de Santander" class="logo"
+    /></a>
+    <% if(showBar) { %> <%- include("../partials/atoms/input", {type: "search",
+    placeholder: "Buscar productos..."}) %>
+    <div class="cart-user">
+        <%- include("../partials/atoms/button", {type:"cart"}) %> <%-
+        include("../partials/atoms/button", {type:"profile", image:
+        "/img/profile-pic.png", name: "Olivia"}) %>
+    </div>
+    <% } %>
 </header>

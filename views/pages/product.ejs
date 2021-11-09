@@ -1,84 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>product</title>
-
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="/styles/styles.css" />
-    </head>
+    <%- include('../partials/head') %>
     <body class="body">
-        <header>Header de Agus</header>
-        <div class="ruta">
-            <i class="fas fa-arrow-left"></i> Volver al listado
-            <i class="fas fa-chevron-right"></i> alimentos
-        </div>
-        <section class="producto">
-            <div class="mini-imgs">
-                <img
-                    class="recortada"
-                    width="48px"
-                    height="48px"
-                    src="/img/havanna1.jpg"
-                />
-                <img
-                    class="recortada"
-                    id="marcada"
-                    width="48px"
-                    height="48px"
-                    src="/img/havanna2.jpg"
-                />
-                <img
-                    class="recortada"
-                    width="48px"
-                    height="48px"
-                    src="/img/havanna3.webp"
-                />
+        <%- include('../partials/header', {showBar: true}) %>
+        <main class="main">
+            <div class="ruta">
+                <i class="fas fa-arrow-left"></i> Volver al listado
+                <i class="fas fa-chevron-right"></i> alimentos
             </div>
-            <img src="/img/havanna2.jpg" class="imagengrande" />
-            <div class="productodescripto">
-                <div class="nombre">
-                    Alfajores Havanna <br />
-                    Chocolate 12 Unidades
+            <section class="producto">
+                <div class="mini-imgs">
+                    <img
+                        class="recortada"
+                        width="48px"
+                        height="48px"
+                        src="/img/havanna1.jpg"
+                    />
+                    <img
+                        class="recortada"
+                        id="marcada"
+                        width="48px"
+                        height="48px"
+                        src="/img/havanna2.jpg"
+                    />
+                    <img
+                        class="recortada"
+                        width="48px"
+                        height="48px"
+                        src="/img/havanna3.webp"
+                    />
                 </div>
-                <div class="puntoyprecio">
-                    <strong class="precio">19.900</strong>
-                    <div class="puntos">PUNTOS <br />SUPERCLUB</div>
+                <img src="/img/havanna2.jpg" class="imagengrande" />
+                <div class="productodescripto">
+                    <div class="nombre">
+                        Alfajores Havanna <br />
+                        Chocolate 12 Unidades
+                    </div>
+                    <div class="puntoyprecio">
+                        <strong class="precio">19.900</strong>
+                        <div class="puntos">PUNTOS <br />SUPERCLUB</div>
+                    </div>
+                    <button class="carrito">Agregar al Carrito</button>
+
+                    <div class="descripcion">
+                        <p>
+                            Voucher válido para una caja de 12 alfajores mixtos
+                            Havanna.<br />
+                            Para retirar el producto, sólo tenés que presentar
+                            el comprobante del canje en el local.<br />Recordá
+                            que tus comprobantes de canje siempre quedan
+                            guardados en la opción "Detalle de puntos".
+                        </p>
+
+                        <p>
+                            El voucher no es válido para delivery pero sí para
+                            Take away.
+                        </p>
+                        <p>
+                            No aplica para alfajores sabos "70 Cacao" o
+                            "Semilia".
+                        </p>
+                        <p>
+                            Consultá tus locales con take away en
+                            https://ticketbox.com.ar/sucursales/havanna.
+                        </p>
+                        <p>
+                            El canje del voucher se encuentra sujeto a
+                            disponibilidad del producto en el local.
+                        </p>
+                        <p>
+                            No combinable con otras promociones.Vigencia hasta
+                            28/02/2022 o hasta agotar stock.
+                        </p>
+                    </div>
                 </div>
-                <div class="carrito">Agregar al Carrito</div>
-
-                <p class="descripcion">
-                    Voucher válido para una caja de 12 alfajores mixtos
-                    Havanna.<br />
-                    Para retirar el producto, sólo tenés que presentar el
-                    comprobante del canje en el local.<br />Recordá que tus
-                    comprobantes de canje siempre quedan guardados en la opción
-                    "Detalle de puntos". <br /><br />
-
-                    El voucher no es válido para delivery pero sí para Take
-                    away.<br /><br />
-                    No aplica para alfajores sabos "70 Cacao" o "Semilia".<br /><br />
-                    Consultá tus locales con take away en
-                    https://ticketbox.com.ar/sucursales/havanna.<br /><br />El
-                    canje del voucher se encuentra sujeto a disponibilidad del
-                    producto en el local. <br /><br />No combinable con otras
-                    promociones.Vigencia hasta 28/02/2022 o hasta agotar stock.
-                </p>
-            </div>
-        </section>
-        <section>
-            <h2>Tambien te puede interesar</h2>
-        </section>
+            </section>
+            <section>
+                <h2>aca va lo de Marco</h2>
+            </section>
+        </main>
+        <%- include('../partials/footer')%>
     </body>
 </html>
