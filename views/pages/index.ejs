@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="./styles/styles.css" />
+<%- include("../partials/head.ejs") %> <%- include("../partials/header.ejs",
+{showBar: true}) %>
+<main class="mainHome">
+  <%- include("../partials/categoriesMenu.ejs") %> <%-
+  include("../partials/productHeroGrup.ejs") %>
+  <div class="homeProduxBox">
+    <%- include("../partials/productGrup.ejs", { productos: teinteresan,
+    title:"Te puede interesar"}) %>
+  </div>
+  <div class="homeProduxBox">
+    <%- include("../partials/productGrup.ejs", { productos: lomaspedido,
+    title:"Lo mas pedido"}) %>
+  </div>
+  <%- include("../partials/categoriesMenu.ejs") %>
+</main>
+<%- include("../partials/footer.ejs") %>
