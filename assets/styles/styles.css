@@ -1,10 +1,10 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 html {
     font-size: 10px;
-    margin: 0;
-    padding: 0;
 }
 
 body {
@@ -23,6 +23,7 @@ body {
     justify-content: center;
     align-items: center;
     max-width: 102.4rem;
+    width: 80%;
     margin: auto;
 }
 
@@ -55,7 +56,6 @@ body {
     margin: 0.4rem 0;
     height: 8rem;
     width: 100%;
-    max-width: 102.4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -81,7 +81,7 @@ body {
     object-fit: cover;
 }
 
-#producto-3 {
+#product-3 {
     object-fit: cover;
     object-position: left;
 }
