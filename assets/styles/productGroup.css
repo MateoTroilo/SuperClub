@@ -1,4 +1,4 @@
-.contianerProductGroup {
+.containerProductGroup {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 250px);
@@ -9,6 +9,6 @@
   margin: 26px 0;
 }
 
-.contianerProductGroup h3 {
+.containerProductGroup h3 {
   grid-column: 1 / -1;
 }
