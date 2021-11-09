@@ -379,7 +379,10 @@ body {
 }
 
 /* Buttton */
-button {
+button,
+.btn-cart,
+.btn-lr,
+.btn-agregar {
   font-family: "Open Sans", sans-serif;
   width: auto;
   height: 3.2rem;
@@ -391,10 +394,13 @@ button {
   align-items: center;
   font-size: 1.2rem;
   font-weight: 300;
+  transition: background-color 500ms;
+  justify-content: center;
 }
 
-button {
-  justify-content: center;
+.btn-agregar {
+  margin-bottom: 16px;
+  margin-top: 16px;
 }
 
 .btn-user,
@@ -405,9 +411,13 @@ button {
 .btn-cart {
   position: relative;
   width: 3.2rem;
+  text-align: center;
 }
 
-button:hover {
+button:hover,
+.btn-cart:hover,
+.btn-lr:hover,
+.btn-agregar:hover {
   background: rgba(236, 0, 0, 1);
 }
 
