@@ -3,7 +3,7 @@
 {showBar: true}) %>
 <main class="mainHome">
   <%- include("../partials/categoriesMenu.ejs") %> <%-
-  include("../partials/productHeroGrup.ejs") %>
+  include("../partials/productHeroGrup.ejs", { heros }) %>
   <div class="homeProduxBox">
     <%- include("../partials/productGrup.ejs", { productos: teinteresan,
     title:"Te puede interesar"}) %>

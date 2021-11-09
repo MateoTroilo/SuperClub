@@ -1,8 +1,8 @@
 const express = require('express')
-const productos = require('./productos.js')
+const data = require('./productos.js')
 const app = express()
 const port = 3000
-
+const { heros, productos } = data
 console.clear()
 
 app.use(express.static('assets'))
@@ -23,6 +23,7 @@ app.get('/', (_, res) =>
     lomaspedido: productos,
     image: 'img/profile-pic.png',
     name: 'marco',
+    heros,
   })
 )
 

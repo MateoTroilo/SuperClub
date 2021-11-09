@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="/styles/productHeroGrup.css" />
 <div class="productHeroGrup">
-  <%- include("./productHero.ejs") %> <%- include("./productHero.ejs") %>
+  <% heros.forEach(({background, icon, title, description}) => { %> <%-
+  include("./productHero.ejs",{background, icon, title, description}) %> <% })
+  %>
 </div>
