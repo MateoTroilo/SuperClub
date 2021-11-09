@@ -21,8 +21,8 @@ app.get('/', (_, res) =>
   res.render('pages/index', {
     teinteresan: productos.slice(0, 4),
     lomaspedido: productos,
-    image:"img/profile-pic.png",
-    name:"marco"
+    image: 'img/profile-pic.png',
+    name: 'marco',
   })
 )
 

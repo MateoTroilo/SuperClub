@@ -1,15 +1,16 @@
 <link rel="stylesheet" href="./styles/styles.css" />
 <%- include("../partials/head.ejs") %> <%- include("../partials/header.ejs",
 {showBar: true}) %>
-<main>
-  <%- include("../partials/categoriesMenu.ejs") %>
-  <div>
-    <h1>te puede interesar</h1>
-    <%- include("../partials/productGrup.ejs", { productos: teinteresan}) %>
+<main class="mainHome">
+  <%- include("../partials/categoriesMenu.ejs") %> <%-
+  include("../partials/productHeroGrup.ejs") %>
+  <div class="homeProduxBox">
+    <%- include("../partials/productGrup.ejs", { productos: teinteresan,
+    title:"Te puede interesar"}) %>
   </div>
-  <div>
-    <h1>Lo mas pedido</h1>
-    <%- include("../partials/productGrup.ejs", { productos: lomaspedido}) %>
+  <div class="homeProduxBox">
+    <%- include("../partials/productGrup.ejs", { productos: lomaspedido,
+    title:"Lo mas pedido"}) %>
   </div>
   <%- include("../partials/categoriesMenu.ejs") %>
 </main>
