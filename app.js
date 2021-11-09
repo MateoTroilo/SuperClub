@@ -10,9 +10,9 @@ app.set("view engine", "ejs");
 
 app.get("/product/:id", (req, res) => {
     const { id } = req.params;
-    res.render("pages/product", { id, productos: productos.slice(0, 4) });
+    res.render("pages/product", { id, productos });
 });
-app.get("/cart", (_, res) => res.render("pages/cart"));
+app.get("/cart", (_, res) => res.render("pages/cart", { productos }));
 app.get("/checkout", (_, res) => res.render("pages/checkout"));
 app.get("/contact", (_, res) => res.render("pages/contact"));
 app.get("/login", (_, res) => res.render("pages/login"));
