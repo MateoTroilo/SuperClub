@@ -1,4 +1,5 @@
-/* reset */
+/* Resets */
+
 :root {
   --blanco: #ffffff;
   --gris-claro: #efefef;
@@ -509,6 +510,8 @@ button:hover {
   gap: 0.8rem;
   margin-left: 5.6rem;
 }
+
+/* Main */
 
 .red-rectangle {
   background-color: var(--rojo);
