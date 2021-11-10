@@ -384,6 +384,10 @@ body {
   align-items: center;
 }
 
+#hamburguesa-producto {
+  object-fit: contain;
+}
+
 /* Categories Menu */
 
 .containerMenuCategories {

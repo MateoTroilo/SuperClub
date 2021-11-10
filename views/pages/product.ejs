@@ -31,14 +31,16 @@
             src="/img/havanna3.webp"
           />
         </div>
-        <img src="/img/havanna2.jpg" class="imagengrande" />
+        <img src="<%- producto.img %>" class="imagengrande" <% if(id == 1) { %>
+        id="hamburguesa-producto" <% } %> />
         <div class="productodescripto">
           <div class="nombre">
-            Alfajores Havanna <br />
-            Chocolate 12 Unidades
+            <%- producto.name.replace(/un/i,"Unidades") %>
           </div>
           <div class="puntoyprecio">
-            <strong class="precio">19.900</strong>
+            <strong class="precio"
+              ><%- producto.price.toLocaleString() %>
+            </strong>
             <div class="puntos">PUNTOS <br />SUPERCLUB</div>
           </div>
           <a href="/cart" class="btn-agregar">Agregar al Carrito</a>

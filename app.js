@@ -12,7 +12,7 @@ app.get('/product/:id', (req, res) => {
   const { id } = req.params
   const currentProduct = productos.find((product) => product.id === +id)
   if (!currentProduct) return res.render('pages/notfound', { productos })
-  res.render('pages/product', { id, productos })
+  res.render('pages/product', { id, producto:currentProduct, productos })
 })
 app.get('/cart', (_, res) => res.render('pages/cart', { productos }))
 app.get('/checkout', (_, res) => res.render('pages/checkout'))
