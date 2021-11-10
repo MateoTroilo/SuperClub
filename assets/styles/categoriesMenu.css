@@ -21,6 +21,9 @@
     brightness(111%) contrast(101%);
   width: 45px;
 }
+.containerMenuCategories p {
+  color: #ffffff;
+}
 
 .divider {
   height: 90%;
