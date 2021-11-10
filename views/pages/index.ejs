@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-    <body>
-        <%- include("../partials/head.ejs") %> <%-
-        include("../partials/header.ejs", {showBar: true}) %>
-        <body>
-            <main class="mainHome">
-                <%- include("../partials/categoriesMenu.ejs") %> <%-
-                include("../partials/productHeroGrup.ejs", { heros }) %>
-                <div class="homeProduxBox">
-                    <%- include("../partials/productGrup.ejs", { productos:
-                    teinteresan, title:"Te puede interesar"}) %>
-                </div>
-                <div class="homeProduxBox">
-                    <%- include("../partials/productGrup.ejs", { productos:
-                    lomaspedido, title:"Lo mas pedido"}) %>
-                </div>
-                <%- include("../partials/categoriesMenu.ejs") %>
-            </main>
-        </body>
-        <%- include("../partials/footer.ejs") %>
-    </body>
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/header', {showBar: true}) %>
+    <main class="mainHome">
+      <%- include("../partials/categoriesMenu.ejs") %> <%-
+      include("../partials/productHeroGroup.ejs", { heros }) %>
+      <div class="homeProduxBox">
+        <%- include("../partials/productGroup.ejs", { productos: teinteresan,
+        title:"Te puede interesar"}) %>
+      </div>
+      <div class="homeProduxBox">
+        <%- include("../partials/productGroup.ejs", { productos: lomaspedido,
+        title:"Lo mas pedido"}) %>
+      </div>
+      <%- include("../partials/categoriesMenu.ejs") %>
+    </main>
+    <%- include("../partials/footer") %>
+  </body>
 </html>

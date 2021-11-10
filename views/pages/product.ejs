@@ -6,8 +6,8 @@
     <%- include('../partials/header', {showBar: true}) %>
     <main class="homenico">
       <div class="ruta">
-        <i class="fas fa-arrow-left"></i> Volver al listado
-        <i class="fas fa-chevron-right"></i> alimentos
+        <a href="/"><i class="fas fa-arrow-left"></i> Volver al listado</a>
+        <a href="#"><i class="fas fa-chevron-right"></i> alimentos</a>
       </div>
       <section class="producto">
         <div class="mini-imgs">
@@ -69,7 +69,7 @@
         </div>
       </section>
       <section>
-        <%- include('../partials/productGrup', {productos:
+        <%- include('../partials/productGroup', {productos:
         productos.slice(0,4),title:"También te puede interesar"}) %>
       </section>
       <%- include('../partials/categoriesMenu') %>

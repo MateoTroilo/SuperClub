@@ -24,7 +24,7 @@ a {
 
 html {
   font-size: 10px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 }
 
@@ -142,7 +142,7 @@ body {
 }
 
 /* Product Group*/
-.contianerProductGrup {
+.containerProductGroup {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 250px);
@@ -153,9 +153,10 @@ body {
   margin: 26px 0;
 }
 
-.contianerProductGrup h3 {
+.containerProductGroup h3 {
   grid-column: 1 / -1;
 }
+
 /* Product Hero */
 .containerProductHero {
   display: flex;
@@ -194,7 +195,7 @@ body {
 }
 
 .containerProductHero::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -215,9 +216,46 @@ body {
   line-height: 30px;
   max-width: 60%;
 }
+
+.containerProductHero:hover {
+  -webkit-animation: jump-infinity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    infinite both;
+  animation: jump-infinity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite
+    both;
+}
+
+@-webkit-keyframes jump-infinity {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes jump-infinity {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
 /* Product Hero Group */
 
-.productHeroGrup {
+.productHeroGroup {
   height: 280px;
   width: 100%;
   position: relative;
@@ -228,8 +266,8 @@ body {
   margin-top: 40px;
 }
 
-.productHeroGrup::after {
-  content: "";
+.productHeroGroup::after {
+  content: '';
   position: absolute;
   bottom: 0;
   width: 100vw;
@@ -366,10 +404,41 @@ body {
   flex-grow: 1;
   width: 128px;
 }
+
+.containerMenuCategories_categories:hover {
+  z-index: 2;
+  -webkit-animation: scaleUp 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: scaleUp 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes scaleUp {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+@keyframes scaleUp {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+
 .containerMenuCategories img {
   filter: invert(100%) sepia(0%) saturate(4097%) hue-rotate(120deg)
     brightness(111%) contrast(101%);
   width: 45px;
+}
+.containerMenuCategories p {
+  color: #ffffff;
 }
 
 .divider {
@@ -384,7 +453,7 @@ button,
 .btn-lr,
 .btn-agregar,
 .btn-home {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   width: auto;
   height: 3.2rem;
   background: rgba(73, 79, 81, 1);
@@ -565,7 +634,7 @@ input {
   height: 3.2rem;
   border-radius: 1.6rem;
   color: var(--gris);
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background: rgba(255, 255, 255, 1);
   border: 0.1rem solid var(--gris);
   padding: 0.8rem 1.6rem;
