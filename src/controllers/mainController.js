@@ -30,12 +30,15 @@ const controller = {
   },
 
   getNotFound: (_, res) => {
-    res.render('pages/notfound', { productos })
+    res
+      .status(404)
+      .render('pages/notfound', { productos, msg: 'No encontramos lo que buscas.' })
   },
   getProduct: (req, res) => {
     const { id } = req.params
     const currentProduct = productos.find((product) => product.id === +id)
-    if (!currentProduct) return res.render('pages/notfound', { productos })
+    if (!currentProduct)
+      return res.status(404).render('pages/notfound', { productos, msg: 'Artículo no encontrado.' })
     res.render('pages/product', {
       id,
       producto: currentProduct,
