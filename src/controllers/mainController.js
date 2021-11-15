@@ -25,7 +25,9 @@ const controller = {
   getIndex: async (_, res) => {
     try {
       const products = await (
-        await fetch('https://dhfakestore.herokuapp.com/api/products/')
+        await fetch(
+          'https://dhfakestore.herokuapp.com/api/products/mostwanted '
+        )
       ).json()
       const teInteresan = await (
         await fetch('https://dhfakestore.herokuapp.com/api/products/suggested')
@@ -53,7 +55,7 @@ const controller = {
         await fetch('https://dhfakestore.herokuapp.com/api/products/suggested')
       ).json()
       const products = await (
-        await fetch('https://dhfakestore.herokuapp.com/api/products/')
+        await fetch('https://dhfakestore.herokuapp.com/api/products/mostwanted')
       ).json()
       const { id } = req.params
       const currentProduct = products.find((product) => product.id === +id)

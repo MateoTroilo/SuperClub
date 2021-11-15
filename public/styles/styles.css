@@ -102,8 +102,8 @@ body {
 }
 
 .productCardImagen {
-  object-fit: cover;
-  object-position: left;
+  object-fit: contain;
+  object-position: center;
   border-radius: 8px;
   width: 228px;
   height: 240px;
