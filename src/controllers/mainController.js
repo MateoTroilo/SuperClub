@@ -22,6 +22,42 @@ const controller = {
     res.render('pages/register')
   },
 
+  getProductWithCategory: async (req, res) => {
+    try {
+      const { category } = req.params
+      const productsWithCategorys = (
+        await (
+          await fetch(`https://dhfakestore.herokuapp.com/api/products/`)
+        ).json()
+      ).filter(
+        (product) => product.category.toLowerCase() === category.toLowerCase()
+      )
+      
+      if (!productsWithCategorys.length) {
+        const productos = await (
+          await fetch(`https://dhfakestore.herokuapp.com/api/products/`)
+        ).json()
+        return res.status(404).render('pages/notfound', {
+          productos: productos.splice(0, 5),
+          msg: 'categoria no encontrada',
+        })
+      }
+
+      res.render('pages/productsSort', {
+        title: `Productos de ${category}`,
+        productos: productsWithCategorys,
+      })
+    } catch (error) {
+      const productos = await (
+        await fetch(`https://dhfakestore.herokuapp.com/api/products/`)
+      ).json()
+      res.status(404).render('pages/notfound', {
+        productos: productos.splice(0, 5),
+        msg: 'categoria no encontrada',
+      })
+    }
+  },
+
   getIndex: async (_, res) => {
     try {
       const products = await (

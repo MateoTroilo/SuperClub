@@ -3,6 +3,7 @@ const mainController = require('../controllers/mainController')
 const router = express.Router()
 
 router.get('/product/:id', mainController.getProduct)
+router.get('/products/:category', mainController.getProductWithCategory)
 router.get('/cart', mainController.getCart)
 router.get('/checkout', mainController.getCheckout)
 router.get('/contact', mainController.getContact)
