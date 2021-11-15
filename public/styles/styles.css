@@ -972,3 +972,14 @@ h1 {
 .btn-home {
   width: 12rem;
 }
+
+.warning-text{
+  font-size: 1rem;
+  color: red;
+}
+
+.success-text{
+  font-size: 1.4rem;
+  color: green;
+  margin-bottom: 0.5rem;
+}

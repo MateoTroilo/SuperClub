@@ -8,10 +8,23 @@
             <div class="red"></div>
             <div class="register">
                 <h1>¡Registrate!</h1>
-                <form class="form-register" action="/">
-                    <input  class="register-input" type="text" name="usuario" placeholder="Tu nombre"></input>
-                    <input  class="register-input" type="email" name="email" placeholder="Tu email"></input>
-                    <input  class="register-input" type="password" name="password" placeholder="Tu contraseña"></input>
+                
+                <form class="form-register" action="/register" method="POST">
+                    <% if (locals.msgExito) { %>
+                        <p class="success-text"><%= msgExito %> </p>
+                    <% } %>
+                    <input  class="register-input" type="text" name="usuario" placeholder="Tu nombre" value="<%= locals.old && old.usuario? old.usuario : "" %>"></input>
+                    <% if (locals.errors && locals.errors["usuario"]) { %>
+                        <p class="warning-text"><%= errors["usuario"].msg %> </p>
+                    <% } %>
+                    <input  class="register-input" type="email" name="email" placeholder="Tu email" value="<%= locals.old && old.email? old.email : "" %>"></input>
+                    <% if (locals.errors && locals.errors["email"]) { %>
+                        <p class="warning-text"><%= errors["email"].msg %> </p>
+                    <% } %>
+                    <input  class="register-input" type="text" name="password" placeholder="Tu contraseña"></input>
+                    <% if (locals.errors && locals.errors["password"]) { %>
+                        <p class="warning-text"><%= errors["password"].msg %> </p>
+                    <% } %>
                     <button class="register-button" type="submit">Crear cuenta</button>
                 </form>
             </div>
