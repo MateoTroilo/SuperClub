@@ -1,6 +1,7 @@
 const express = require("express");
 const mainRoutes = require("./routes/mainRoutes");
 const loginRoutes = require("./routes/loginRoutes");
+const session = require("express-session");
 
 const app = express();
 const PORT = 3000;
@@ -10,6 +11,7 @@ console.clear();
 app.set("view engine", "ejs");
 app.set("views", "src/views");
 
+app.use(session({ secret: "ola k ase" }));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
