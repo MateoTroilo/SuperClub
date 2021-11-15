@@ -551,8 +551,7 @@ button:hover,
   border: 0.1rem solid #cccccc;
 }
 .footer img:hover {
-  width: 30px;
-  height: 30px;
+  animation: scaleUp 0.5s infinite;
   filter: invert(23%) sepia(85%) saturate(7257%) hue-rotate(5deg)
     brightness(101%) contrast(130%);
   box-shadow: 0px 5px 5px 0px #888888;
