@@ -6,11 +6,17 @@
     <main class="main-notfound">
       <h2 class="notfound-title">Error 404: <%= msg %></h2>
       <a href="/" class="btn-home">Volver a home</a>
-      <section>
-        <%- include('../partials/productGroup', {productos:
-        productos.slice(0,4),title:"También te puede interesar"}) %>
-      </section>
+
+      <%- include('../partials/productGroup', {
+      productos,title:"También te puede interesar"}) %>
     </main>
     <%- include("../partials/footer") %>
   </body>
+  <script>
+    function imagenError(source) {
+      source.src = '/img/not_found.png'
+      source.onerror = ''
+      return true
+    }
+  </script>
 </html>

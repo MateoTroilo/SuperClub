@@ -35,7 +35,7 @@ const controller = {
 
       res.render('pages/index', {
         teinteresan: teInteresan.slice(0, 5),
-        lomaspedido: products,
+        lomaspedido: products.slice(0, 10),
         heros,
       })
     } catch (error) {
@@ -51,23 +51,35 @@ const controller = {
   },
   getProduct: async (req, res) => {
     try {
-      const teInteresan = await (
-        await fetch('https://dhfakestore.herokuapp.com/api/products/suggested')
-      ).json()
-      const products = await (
-        await fetch('https://dhfakestore.herokuapp.com/api/products/mostwanted')
-      ).json()
       const { id } = req.params
-      const currentProduct = products.find((product) => product.id === +id)
-      if (!currentProduct)
+      let currentProduct
+      try {
+        const req = await fetch(
+          `https://dhfakestore.herokuapp.com/api/products/${id}`
+        )
+        currentProduct = await req.json()
+      } catch (error) {
+        const products = await (
+          await fetch(
+            'https://dhfakestore.herokuapp.com/api/products/mostwanted'
+          )
+        ).json()
         return res.status(404).render('pages/notfound', {
-          productos: teInteresan,
+          productos: products.slice(0, 5),
           msg: 'Artículo no encontrado.',
         })
+      }
+
+      const teInteresaConCategoria = await (
+        await fetch(
+          `https://dhfakestore.herokuapp.com/api/products/${id}/related`
+        )
+      ).json()
+
       res.render('pages/product', {
         id,
         producto: currentProduct,
-        productos: teInteresan,
+        productos: teInteresaConCategoria.splice(0, 5),
       })
     } catch (error) {
       res.status(501).redirect('/')
