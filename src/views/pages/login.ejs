@@ -14,11 +14,7 @@
           <p class="warning-text"><%= errors["email"].msg %></p>
           <% } %>
 
-          <input
-            type="password"
-            placeholder="Tu contraseña"
-            name="user_password"
-          />
+          <input type="password" placeholder="Tu contraseña" name="password" />
 
           <% if (locals.errors && locals.errors["password"]) { %>
           <p class="warning-text"><%= errors["password"].msg %></p>
