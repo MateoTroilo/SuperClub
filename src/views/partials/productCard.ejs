@@ -1,9 +1,9 @@
-<a href="/product/<%= id %> " class="productCard">
-  <img src="<%= img %>" class="productCardImagen" <% if(id === 1) { %>
-  id="hamburguesa" <%} %> >
+<a href="/product/<%= _id %> " class="productCard">
+  <img src="<%= image %>" class="productCardImagen" onerror="imagenError(this)"
+  id="<% _id === 1 && "hamburguesa"%>" >
   <div class="productCard_ContainerInfo">
     <p class="productCard_NameAndValue productCard_ContainerInfo_Name">
-      <%= name %>
+      <%= title %>
     </p>
     <div class="productCard_separator"></div>
     <div class="productCard_ContainerInfo_PointAndLegend">
@@ -12,3 +12,5 @@
     </div>
   </div>
 </a>
+
+

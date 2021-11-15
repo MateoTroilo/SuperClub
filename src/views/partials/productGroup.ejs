@@ -1,5 +1,12 @@
 <div class="containerProductGroup">
   <h3><%= title %></h3>
-  <% productos.forEach(({ name, price, img, id }) => { %> <%-
-  include("./productCard.ejs", {name, price, img, id}) %> <% }) %>
+  <% productos.forEach(({ title, price, image, _id}) => { %> <%-
+  include("./productCard.ejs", {title, price, image, _id}) %> <% }) %>
 </div>
+<script>
+  function imagenError(source) {
+    source.src = 'img/not_found.png'
+    source.onerror = ''
+    return true
+  }
+</script>
