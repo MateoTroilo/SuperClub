@@ -10,7 +10,7 @@ const controller = {
     if (!errors.isEmpty()) {
       res.render("pages/login", { errors: errors.mapped(), old: req.body });
     } else {
-      res.redirect("pages/index");
+      res.redirect("/");
     }
   },
 };
