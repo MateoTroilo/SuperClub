@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "user": "agirlhasnoname@digitalhouse.com",
+        "cart": [
+            {
+                "product": "6191cb73c654f145d4326b87",
+                "qty": 2
+            },
+            {
+                "product": "6191cb5ec654f145d4326b85",
+                "qty": 1
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "user": "agirlhasnoname@digitalhouse.NASHE",
+        "cart": [
+            {
+                "product": "6191cbb54f875644e0b8e99e",
+                "qty": 1
+            }
+        ]
+    }
+]
