@@ -4,7 +4,7 @@
   <body>
     <%- include("../partials/header", {showBar: true}) %>
     <main class="main-notfound">
-      <h2 class="notfound-title">Error 404: Artículo no encontrado</h2>
+      <h2 class="notfound-title">Error 404: <%= msg %></h2>
       <a href="/" class="btn-home">Volver a home</a>
       <section>
         <%- include('../partials/productGroup', {productos:

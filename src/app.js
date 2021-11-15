@@ -1,15 +1,20 @@
-const express = require('express')
-const mainRoutes = require('./routes/mainRoutes')
+const express = require("express");
+const mainRoutes = require("./routes/mainRoutes");
+const loginRoutes = require("./routes/loginRoutes");
 
-const app = express()
-const PORT = 3000
+const app = express();
+const PORT = 3000;
 
-console.clear()
+console.clear();
 
-app.use(express.static('public'))
-app.set('view engine', 'ejs')
-app.set('views', 'src/views')
+app.set("view engine", "ejs");
+app.set("views", "src/views");
 
-app.use('/', mainRoutes)
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
-app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
+app.use("/login", loginRoutes);
+app.use("/", mainRoutes);
+
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
