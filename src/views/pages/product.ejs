@@ -19,7 +19,7 @@
             height="48px"
             src="<%- producto.image %>"
             onerror="imagenError(this)"
-            id="marcada"
+            onclick="changeImage(this)"
           />
           <% producto.gallery.forEach(img => { %>
           <img
@@ -27,6 +27,7 @@
             width="48px"
             height="48px"
             src="<%- img %> "
+            onclick="changeImage(this)"
             onerror="imagenError(this)"
           />
           <% }) %>
@@ -66,6 +67,13 @@
       source.src = '/img/not_found.png'
       source.onerror = ''
       return true
+    }
+    const ImagenGrande = document.querySelector('.imagengrande')
+    const changeImage = (source) => {
+      const prevSelection = document.querySelector('.currentSelect')
+      ImagenGrande.src = source.src
+      prevSelection.classList.remove('currentSelect')
+      source.classList.add('currentSelect')
     }
   </script>
 </html>

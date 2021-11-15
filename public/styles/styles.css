@@ -302,7 +302,15 @@ body {
 .recortada {
   object-fit: contain;
   border-radius: 8px;
+  opacity: 0.6;
 }
+.recortada:hover {
+  z-index: 2;
+  -webkit-animation: scaleUp 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: scaleUp 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  opacity: 1;
+}
+
 .imagengrande {
   object-fit: contain;
   object-position: center;
@@ -315,8 +323,8 @@ body {
   margin: 8px 0;
   border-radius: 20px;
 }
-.recortada#marcada {
-  border: 2px solid rgba(236, 0, 0, 1);
+.currentSelect {
+  border: 2px solid rgb(236, 0, 0);
 }
 .nombre {
   margin: 0 0 8px 0;
