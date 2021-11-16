@@ -4,15 +4,10 @@
   <body>
     <%- include('../partials/header', {showBar: true}) %>
     <main class="mainHome">
-      <%- include("../partials/categoriesMenu.ejs") %> <%-
-      include("../partials/productHeroGroup.ejs", { heros }) %>
+      <%- include("../partials/categoriesMenu.ejs") %>
       <div class="homeProduxBox">
-        <%- include("../partials/productGroup.ejs", { productos: teinteresan,
-        title:"Te puede interesar"}) %>
-      </div>
-      <div class="homeProduxBox">
-        <%- include("../partials/productGroup.ejs", { productos: lomaspedido,
-        title:"Lo mas pedido"}) %>
+        <%- include("../partials/productGroup.ejs", { productos,
+        title}) %>
       </div>
       <%- include("../partials/categoriesMenu.ejs") %>
     </main>
