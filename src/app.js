@@ -1,6 +1,5 @@
 const express = require('express')
 const mainRoutes = require('./routes/mainRoutes')
-const { check, validationResult, body } = require("express-validator");
 const registerRoutes = require("./routes/registerRoutes");
 const mainRoutes = require("./routes/mainRoutes");
 const loginRoutes = require("./routes/loginRoutes");
@@ -20,15 +19,18 @@ app.use(express.json());
 app.set('view engine', 'ejs')
 app.set('views', 'src/views')
 
-app.use(session({ secret: "ola k ase" }));
+app.use(
+    session({
+        secret: "keyboard cat",
+        resave: false,
+        saveUninitialized: true,
+    })
+);
 app.use(express.static('public'))
 
 app.use("/register", registerRoutes)
 app.use("/login", loginRoutes);
 app.use('/', mainRoutes)
 app.set("views", "src/views");
-
-
-
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));

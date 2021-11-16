@@ -1,17 +1,48 @@
 const { heros, productos } = require("../../productos");
+const Cart = require("../models/Cart");
+const fetch = require("node-fetch");
+const https = require("https");
+const agent = new https.Agent({
+    rejectUnauthorized: false,
+});
+
+let email = "agirlhasnoname@digitalhouse.com";
 
 const controller = {
-    getCart: (_, res) => {
-        res.render("pages/cart", { productos });
+    getCart: async (req, res) => {
+        let cart = Cart.findByUser(
+            req.session.loggedUser?.email || email
+        )?.cart;
+        let products = [];
+        if (!cart) res.render("pages/cart", { products, productos });
+        else {
+            for (const cartProduct of cart) {
+                try {
+                    const request = await fetch(
+                        `https://dhfakestore.herokuapp.com/api/products/${cartProduct.product}`,
+                        { agent }
+                    );
+                    let product = await request.json();
+                    product.qty = cartProduct.qty;
+                    delete product.mostWanted;
+                    delete product.description;
+                    delete product.category;
+
+                    products.push(product);
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+            res.render("pages/cart", { products });
+        }
     },
 
     getCheckout: (_, res) => {
-        res.status(501).render("pages/notfound", {
-            productos,
-            msg: "Estamos trabajando para implementar esta vista",
-            status: 501,
-        });
-    },
+      res.status(501).render("pages/notfound", {
+          productos,
+          msg: "Estamos trabajando para implementar esta vista",
+          status: 501,
+      })},
 
     getContact: (_, res) => {
         res.render("pages/contact");
@@ -54,6 +85,15 @@ const controller = {
             producto: currentProduct,
             productos,
         });
+    },
+    postCart: (req, res) => {
+        let { product } = req.body;
+        let cartData = {
+            user: req.session.loggedUser?.email || email,
+            product,
+        };
+        Cart.addCart(cartData);
+        res.render("pages/cart", { productos });
     },
 };
 
