@@ -5,9 +5,13 @@
   <% if(showBar) { %> <%- include("../partials/atoms/input", {type: "search",
   placeholder: "Buscar productos..."}) %>
   <div class="cart-user">
-    <%- include("../partials/atoms/button", {type:"cart"}) %>
+    <% if (locals.isLogged) { %> <%- include("../partials/atoms/button",
+    {type:"cart", qty: locals.qty}) %> <%- include("../partials/atoms/button",
+    {type:"profile", image:"/img/profile-pic.png", name:
+    locals.isLogged.usuario}) %> <% } else { %>
     <a href="/login" class="btn-lr">Login</a>
     <a href="/register" class="btn-lr">Registrarse</a>
+    <% } %>
   </div>
   <% } %>
 </header>

@@ -52,7 +52,8 @@ const controller = {
     res.render('pages/register')
   },
 
-  getNotFound: (_, res) => {
+  getNotFound: async (_, res) => {
+    const productos = await Productos.getData()
     res.status(404).render('pages/notfound', {
       productos,
       msg: 'No encontramos lo que buscas.',
@@ -76,7 +77,6 @@ const controller = {
       const productsWithCategorys = (await Productos.getData()).filter(
         (product) => product.category.toLowerCase() === category.toLowerCase()
       )
-      console.log(await Productos.getData())
 
       if (!productsWithCategorys.length) {
         const productos = await Productos.getData()
@@ -112,7 +112,7 @@ const controller = {
         heros,
       })
     } catch (error) {
-      const mostwanted = await Productos.findBy('mostwanted')
+      const mostwanted = await Productos.getData()
       res.status(500).render('pages/notfound', {
         productos: mostwanted.slice(0, 5),
         msg: 'Algo salio mal.',
@@ -128,7 +128,7 @@ const controller = {
       try {
         currentProduct = await Productos.findBy(id)
       } catch (error) {
-        const products = await Productos.findBy('mostwanted')
+        const products = await Productos.getData()
         return res.status(404).render('pages/notfound', {
           productos: products.slice(0, 5),
           msg: 'Artículo no encontrado.',

@@ -16,11 +16,17 @@ const Cart = {
     }
     return 1
   },
+  lengthByUser: function (email) {
+    return this.findByUser(email)?.cart?.reduce(
+      (acc, current) => acc + current.qty,
+      0
+    )
+  },
 
   findByUser: function (userEmail) {
     let allCarts = this.getData()
-    let cart = allCarts.find((cart) => cart.user === userEmail)
-    return cart
+    let currentCart = allCarts.find((cart) => cart.user === userEmail)
+    return currentCart
   },
 
   findCartIndex: function (userEmail) {
