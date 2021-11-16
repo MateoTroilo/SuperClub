@@ -1,9 +1,9 @@
 const express = require('express')
-const mainRoutes = require('./routes/mainRoutes')
-const registerRoutes = require("./routes/registerRoutes");
 const mainRoutes = require("./routes/mainRoutes");
+const registerRoutes = require("./routes/registerRoutes");
 const loginRoutes = require("./routes/loginRoutes");
 const session = require("express-session");
+const pathTracking = require('./middlewares/pathTracking');
 
 const app = express();
 const PORT = 3000;
@@ -28,6 +28,7 @@ app.use(
 );
 app.use(express.static('public'))
 
+app.use(pathTracking)
 app.use("/register", registerRoutes)
 app.use("/login", loginRoutes);
 app.use('/', mainRoutes)

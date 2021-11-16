@@ -49,8 +49,16 @@
             </strong>
             <div class="puntos">PUNTOS <br />SUPERCLUB</div>
           </div>
-          <a href="/cart" class="btn-agregar">Agregar al Carrito</a>
-
+          <
+          <form action="/cart" method="post">
+            <button
+              name="product"
+              class="btn-agregar-cart"
+              value="<%- producto._id %>"
+            >
+              Agregar al Carrito
+            </button>
+          </form>
           <div class="descripcion">
             <p><%- producto.description %></p>
           </div>

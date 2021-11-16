@@ -1,99 +1,89 @@
-const { heros, productos } = require("../../productos");
-const Cart = require("../models/Cart");
-const fetch = require("node-fetch");
-const https = require("https");
+const { heros } = require('../../productos')
+const Cart = require('../models/Cart')
+const fetch = require('node-fetch')
+const https = require('https')
+const Productos = require('../models/Productos')
 const agent = new https.Agent({
-    rejectUnauthorized: false,
-});
-
-let email = "agirlhasnoname@digitalhouse.com";
+  rejectUnauthorized: false,
+})
 
 const controller = {
-    getCart: async (req, res) => {
-        let cart = Cart.findByUser(
-            req.session.loggedUser?.email || email
-        )?.cart;
-        let products = [];
-        if (!cart) res.render("pages/cart", { products, productos });
-        else {
-            for (const cartProduct of cart) {
-                try {
-                    const request = await fetch(
-                        `https://dhfakestore.herokuapp.com/api/products/${cartProduct.product}`,
-                        { agent }
-                    );
-                    let product = await request.json();
-                    product.qty = cartProduct.qty;
-                    delete product.mostWanted;
-                    delete product.description;
-                    delete product.category;
+  getCart: async (req, res) => {
+    const productos = await Productos.getData()
+    let cart = Cart.findByUser(req.session.loggedUser?.email)?.cart
+    let products = []
+    if (!cart) res.render('pages/cart', { products, productos })
+    else {
+      for (const cartProduct of cart) {
+        try {
+          const product = await Productos.findBy(cartProduct.product)
+          product.qty = cartProduct.qty
+          delete product.mostWanted
+          delete product.description
+          delete product.category
 
-                    products.push(product);
-                } catch (error) {
-                    console.error(error);
-                }
-            }
-            res.render("pages/cart", { products });
+          products.push(product)
+        } catch (error) {
+          console.error(error)
         }
-    },
+      }
+      res.render('pages/cart', { products })
+    }
+  },
 
-    getCheckout: (_, res) => {
-      res.status(501).render("pages/notfound", {
-          productos,
-          msg: "Estamos trabajando para implementar esta vista",
-          status: 501,
-      })},
+  getCheckout: async (_, res) => {
+    const productos = await Productos.getData()
+    res.status(501).render('pages/notfound', {
+      productos,
+      msg: 'Estamos trabajando para implementar esta vista',
+      status: 501,
+    })
+  },
 
-    getContact: (_, res) => {
-        res.render("pages/contact");
-    },
+  getContact: (_, res) => {
+    res.render('pages/contact')
+  },
 
-    getLogin: (_, res) => {
-        res.render("pages/login");
-    },
+  getLogin: (_, res) => {
+    res.render('pages/login')
+  },
 
-    getRegister: (_, res) => {
-        res.render("pages/register");
-    },
+  getRegister: (_, res) => {
+    res.render('pages/register')
+  },
 
+  getNotFound: (_, res) => {
+    res.status(404).render('pages/notfound', {
+      productos,
+      msg: 'No encontramos lo que buscas.',
+      status: 404,
+    })
+  },
 
-    getNotFound: (_, res) => {
-        res.status(404).render("pages/notfound", {
-            productos,
-            msg: "No encontramos lo que buscas.",
-            status: 404,
-        });
-    },
-    
-    postCart: (req, res) => {
-        let { product } = req.body;
-        let cartData = {
-            user: req.session.loggedUser?.email || email,
-            product,
-        };
-        Cart.addCart(cartData);
-        res.render("pages/cart", { productos });
-    },
+  postCart: async (req, res) => {
+    let { product } = req.body
+    let cartData = {
+      user: req.session.loggedUser?.email,
+      product,
+    }
+    Cart.addCart(cartData)
+    res.redirect(req.session?.history?.prev)
+  },
 
   getProductWithCategory: async (req, res) => {
     try {
       const { category } = req.params
-      const productsWithCategorys = (
-        await (
-          await fetch(`https://dhfakestore.herokuapp.com/api/products/`)
-        ).json()
-      ).filter(
+      const productsWithCategorys = (await Productos.getData()).filter(
         (product) => product.category.toLowerCase() === category.toLowerCase()
       )
-      
+      console.log(await Productos.getData())
+
       if (!productsWithCategorys.length) {
-        const productos = await (
-          await fetch(`https://dhfakestore.herokuapp.com/api/products/`)
-        ).json()
+        const productos = await Productos.getData()
         return res.status(404).render('pages/notfound', {
           productos: productos.splice(0, 5),
           msg: 'categoria no encontrada',
-          status: 404
+          status: 404,
         })
       }
 
@@ -102,35 +92,32 @@ const controller = {
         productos: productsWithCategorys,
       })
     } catch (error) {
-      const productos = await (
-        await fetch(`https://dhfakestore.herokuapp.com/api/products/`)
-      ).json()
+      const productos = await Productos.getData()
       res.status(404).render('pages/notfound', {
         productos: productos.splice(0, 5),
         msg: 'categoria no encontrada',
-        status:404
+        status: 404,
       })
     }
   },
 
-  getIndex: async (_, res) => {
+  getIndex: async (req, res) => {
     try {
-      const products = await (
-        await fetch(
-          'https://dhfakestore.herokuapp.com/api/products/mostwanted '
-        )
-      ).json()
-      const teInteresan = await (
-        await fetch('https://dhfakestore.herokuapp.com/api/products/suggested')
-      ).json()
+      const mostwanted = await Productos.findBy('mostwanted')
+      const teInteresan = await Productos.findBy('suggested')
 
       res.render('pages/index', {
         teinteresan: teInteresan.slice(0, 5),
-        lomaspedido: products.slice(0, 10),
+        lomaspedido: mostwanted.slice(0, 10),
         heros,
       })
     } catch (error) {
-      res.status(501).redirect('/')
+      const mostwanted = await Productos.findBy('mostwanted')
+      res.status(500).render('pages/notfound', {
+        productos: mostwanted.slice(0, 5),
+        msg: 'Algo salio mal.',
+        status: 500,
+      })
     }
   },
 
@@ -139,28 +126,17 @@ const controller = {
       const { id } = req.params
       let currentProduct
       try {
-        const req = await fetch(
-          `https://dhfakestore.herokuapp.com/api/products/${id}`
-        )
-        currentProduct = await req.json()
+        currentProduct = await Productos.findBy(id)
       } catch (error) {
-        const products = await (
-          await fetch(
-            'https://dhfakestore.herokuapp.com/api/products/mostwanted'
-          )
-        ).json()
+        const products = await Productos.findBy('mostwanted')
         return res.status(404).render('pages/notfound', {
           productos: products.slice(0, 5),
           msg: 'Artículo no encontrado.',
-          status:404
+          status: 404,
         })
       }
 
-      const teInteresaConCategoria = await (
-        await fetch(
-          `https://dhfakestore.herokuapp.com/api/products/${id}/related`
-        )
-      ).json()
+      const teInteresaConCategoria = await Productos.findBy(`${id}/related`)
 
       res.render('pages/product', {
         id,
@@ -168,15 +144,11 @@ const controller = {
         productos: teInteresaConCategoria.splice(0, 5),
       })
     } catch (error) {
-      const products = await (
-        await fetch(
-          'https://dhfakestore.herokuapp.com/api/products/mostwanted'
-        )
-      ).json()
-      res.status(501).render('pages/notfound', {
+      const products = await Productos.getData()
+      res.status(500).render('pages/notfound', {
         productos: products.slice(0, 5),
         msg: 'Algo salio mal.',
-        status:501
+        status: 500,
       })
     }
   },
