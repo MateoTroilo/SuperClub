@@ -1,17 +1,24 @@
 const { heros, productos } = require("../../productos");
 
 const controller = {
-    getCart: (req, res) => {
-        if (!req.session.loggedUser) res.redirect("/login");  
+    getCart: (_, res) => {
         res.render("pages/cart", { productos });
     },
 
     getCheckout: (_, res) => {
-        res.render("pages/checkout");
+        res.status(501).render("pages/notfound", {
+            productos,
+            msg: "Estamos trabajando para implementar esta vista",
+            status: 501,
+        });
     },
 
     getContact: (_, res) => {
         res.render("pages/contact");
+    },
+
+    getLogin: (_, res) => {
+        res.render("pages/login");
     },
 
     getRegister: (_, res) => {
@@ -30,6 +37,7 @@ const controller = {
         res.status(404).render("pages/notfound", {
             productos,
             msg: "No encontramos lo que buscas.",
+            status: 404,
         });
     },
     getProduct: (req, res) => {
@@ -39,6 +47,7 @@ const controller = {
             return res.status(404).render("pages/notfound", {
                 productos,
                 msg: "Artículo no encontrado.",
+                status: 404,
             });
         res.render("pages/product", {
             id,
