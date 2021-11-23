@@ -1026,9 +1026,49 @@ h1 {
   width: 2.5rem;
   display: none;
 }
+
+.product-mobile {
+  display: none;
+  width: 100%;
+  border-radius: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 0.3rem 0.5rem var(--Gris);
+  padding: 1.6rem;
+}
+.product-mobile .imagengrande {
+  width: 100%;
+}
+
 /* Media Querys Responsive*/
 
 @media screen and (max-width: 414px) {
+  .producto {
+    display: none;
+  }
+  .ruta {
+    width: 100%;
+  }
+  .homenico {
+    padding: 1.6rem;
+  }
+  .puntoyprecio {
+    margin-bottom: 24px;
+  }
+  .product-mobile {
+    display: flex;
+    flex-direction: column;
+  }
+  .recortada {
+    width: 48px;
+  }
+  .mini-imgs {
+    flex-direction: row;
+  }
+
+  .containerProductGroup {
+    align-self: flex-start;
+  }
+
   .divider {
     display: none;
   }
@@ -1077,6 +1117,7 @@ h1 {
     align-items: center;
     justify-content: center;
   }
+
   .footer {
     flex-direction: column;
     align-items: center;
