@@ -154,7 +154,7 @@ body {
 }
 
 .containerProductGroup h3 {
-  width: 300px;
+  width: 350px;
   grid-column: 1 / -1;
 }
 
@@ -1006,6 +1006,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  padding: 1.6rem;
 }
 
 .btn-home {
@@ -1081,28 +1082,35 @@ h1 {
   .discount {
     display: none;
   }
+
+  .notfoundProduxBox {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
   .manage-cart {
     align-self: flex-end;
     justify-content: space-between;
     margin: 0;
     width: 85%;
   }
-  .back-link{
+  .back-link {
     align-self: flex-start;
     width: none;
     margin: 0;
   }
-.price-total-cart{
-  font-size: 2.4rem;
-  margin-right: 1.4rem;
-}
+  .price-total-cart {
+    font-size: 2.4rem;
+    margin-right: 1.4rem;
+  }
   .product-mobile {
     display: block;
   }
   .logo-reducido {
     display: block;
   }
-}
+
   .product-name-cart {
     max-width: 80%;
   }

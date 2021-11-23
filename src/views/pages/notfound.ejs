@@ -8,8 +8,10 @@
       <h2 class="notfound-title">Error <%= status %>: <%= msg %></h2>
       <a href="/" class="btn-home">Volver a home</a>
 
-      <%- include('../partials/productGroup', {productos:
-      productos.slice(0,4),title:"También te puede interesar"}) %>
+      <div class="notfoundProduxBox">
+        <%- include('../partials/productGroup', {productos:
+        productos.slice(0,4),title:"También te puede interesar"}) %>
+      </div>
     </main>
     <%- include("../partials/footer") %>
   </body>

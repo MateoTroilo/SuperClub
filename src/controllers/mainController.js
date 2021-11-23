@@ -82,7 +82,7 @@ const controller = {
         const productos = await Productos.getData()
         return res.status(404).render('pages/notfound', {
           productos: productos.splice(0, 5),
-          msg: 'categoria no encontrada',
+          msg: 'Categoría no encontrada',
           status: 404,
         })
       }
@@ -95,7 +95,7 @@ const controller = {
       const productos = await Productos.getData()
       res.status(404).render('pages/notfound', {
         productos: productos.splice(0, 5),
-        msg: 'categoria no encontrada',
+        msg: 'Categoría no encontrada',
         status: 404,
       })
     }
