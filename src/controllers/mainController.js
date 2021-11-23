@@ -81,7 +81,7 @@ const controller = {
       if (!productsWithCategorys.length) {
         const productos = await Productos.getData()
         return res.status(404).render('pages/notfound', {
-          productos: productos.splice(0, 5),
+          productos: productos.slice(0, 5),
           msg: 'Categoría no encontrada',
           status: 404,
         })
@@ -94,7 +94,7 @@ const controller = {
     } catch (error) {
       const productos = await Productos.getData()
       res.status(404).render('pages/notfound', {
-        productos: productos.splice(0, 5),
+        productos: productos.slice(0, 5),
         msg: 'Categoría no encontrada',
         status: 404,
       })
@@ -141,7 +141,7 @@ const controller = {
       res.render('pages/product', {
         id,
         producto: currentProduct,
-        productos: teInteresaConCategoria.splice(0, 5),
+        productos: teInteresaConCategoria.slice(0, 5),
       })
     } catch (error) {
       const products = await Productos.getData()
