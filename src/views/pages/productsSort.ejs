@@ -2,12 +2,12 @@
 <html lang="en">
   <%- include('../partials/head') %>
   <body>
-    <%- include('../partials/header', {showBar: true}) %>
+    <%- include('../partials/header', {showBar: true, showSantanderLogo: true})
+    %>
     <main class="mainHome">
       <%- include("../partials/categoriesMenu.ejs") %>
       <div class="homeProduxBox">
-        <%- include("../partials/productGroup.ejs", { productos,
-        title}) %>
+        <%- include("../partials/productGroup.ejs", { productos, title}) %>
       </div>
       <%- include("../partials/categoriesMenu.ejs") %>
     </main>

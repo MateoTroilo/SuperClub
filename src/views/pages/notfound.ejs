@@ -2,7 +2,8 @@
 <html lang="en">
   <%- include("../partials/head") %>
   <body>
-    <%- include("../partials/header", {showBar: true}) %>
+    <%- include("../partials/header", {showBar: true, showSantanderLogo: true})
+    %>
     <main class="main-notfound">
       <h2 class="notfound-title">Error <%= status %>: <%= msg %></h2>
       <a href="/" class="btn-home">Volver a home</a>
