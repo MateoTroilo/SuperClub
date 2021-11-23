@@ -1038,10 +1038,75 @@ h1 {
 .product-mobile .imagengrande {
   width: 100%;
 }
+.cartbuttoncontainers {
+  display: flex;
+  gap: 1.8rem;
+  justify-content: space-between;
+}
 
 /* Media Querys Responsive*/
 
 @media screen and (max-width: 414px) {
+  .article-cart {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 12rem;
+    padding: 0.8rem;
+    margin: 0;
+  }
+  .main-cart {
+    padding: 1.6rem;
+    margin: 0;
+  }
+  .cart {
+    gap: 1.6rem;
+    width: 100%;
+  }
+  .cart form {
+    width: 100%;
+    justify-content: center;
+    margin: 1rem 0 0 0;
+  }
+  .product-cart {
+    margin: 0;
+    gap: 0.8rem;
+  }
+  .points-cart {
+    font-size: 1.6rem;
+    margin: 1.6rem 0;
+  }
+  .cart button {
+    margin: 0;
+  }
+  .discount {
+    display: none;
+  }
+  .manage-cart {
+    align-self: flex-end;
+    justify-content: space-between;
+    margin: 0;
+    width: 85%;
+  }
+  .back-link{
+    align-self: flex-start;
+    width: none;
+    margin: 0;
+  }
+.price-total-cart{
+  font-size: 2.4rem;
+  margin-right: 1.4rem;
+}
+  .product-mobile {
+    display: block;
+  }
+  .logo-reducido {
+    display: block;
+  }
+}
+  .product-name-cart {
+    max-width: 80%;
+  }
+
   .producto {
     display: none;
   }

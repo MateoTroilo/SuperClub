@@ -22,15 +22,17 @@
               <p class="product-name-cart"><%= producto.title %></p>
             </div>
             <div class="manage-cart">
-              <button class="delete-button button-cart">Quitar</button>
-              <div class="cant-bar">
-                <button class="edit-cant" id="minus-cant">
-                  <i class="fas fa-minus"></i>
-                </button>
-                <p><%= producto.qty %></p>
-                <button class="edit-cant" id="plus-cant">
-                  <i class="fas fa-plus"></i>
-                </button>
+              <div class="cartbuttoncontainers">
+                <button class="delete-button button-cart">Quitar</button>
+                <div class="cant-bar">
+                  <button class="edit-cant" id="minus-cant">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <p><%= producto.qty %></p>
+                  <button class="edit-cant" id="plus-cant">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
               </div>
               <% price = producto.qty * producto.price %>
               <strong class="price-cart"><%= price.toLocaleString() %></strong>
@@ -47,7 +49,7 @@
               class="input-discount"
               name="input-discount"
               id="input-discount"
-              placeholder="Ingrese su código"
+              placeholder="Código de descuento"
             />
             <button class="validate-discount button-cart">Validar</button>
           </form>
