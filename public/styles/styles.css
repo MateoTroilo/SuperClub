@@ -225,6 +225,46 @@ body {
     both;
 }
 
+.menuUserContainer {
+  display: flex;
+  flex-direction: column;
+  width: 20.6rem;
+  background-color: white;
+  padding: 0 0 1.5rem 0;
+  border-radius: 1.6rem;
+}
+.toDarkMode img,
+.toLightMode img {
+  width: 1.6rem;
+}
+.toDarkMode,
+.toLightMode {
+  display: flex;
+  gap: 0.8rem;
+  margin-left: 1.6rem;
+  margin-top: 0.6rem;
+}
+.toLightMode {
+  display: none;
+}
+.menuUserLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem 4rem;
+  border-bottom: 1px solid var(--Gris);
+  border-top: 1px solid var(--Gris);
+}
+.menuUserProfile img {
+  width: 3.2rem;
+}
+.menuUserProfile {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1.6rem;
+}
+
 @-webkit-keyframes jump-infinity {
   0% {
     -webkit-transform: translateY(0);
@@ -1048,6 +1088,11 @@ h1 {
 /* Media Querys Responsive*/
 
 @media screen and (max-width: 414px) {
+  .menuUserContainer {
+    height: 100%;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
   .article-cart {
     flex-direction: column;
     align-items: flex-start;
