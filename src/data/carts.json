@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "user": "agirlhasnoname@digitalhouse.com",
+    "cart": [
+      {
+        "product": "6191cb73c654f145d4326b87",
+        "qty": 2
+      },
+      {
+        "product": "6191cb5ec654f145d4326b85",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "user": "agirlhasnoname@digitalhouse.NASHE",
+    "cart": [
+      {
+        "product": "6191cbb54f875644e0b8e99e",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "user": "falsofalsisimo@gmail.com",
+    "cart": [
+      {
+        "product": "6191cb73c654f145d4326b87",
+        "qty": 13
+      },
+      {
+        "product": "6191e4dbedf2290788389240",
+        "qty": 27
+      },
+      {
+        "product": "6191cb5ec654f145d4326b85",
+        "qty": 5
+      },
+      {
+        "product": "6191cbb54f875644e0b8e99e",
+        "qty": 1
+      }
+    ]
+
+  }
+]

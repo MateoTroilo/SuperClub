@@ -1,0 +1,6 @@
+<div class="containerProductGroup">
+  <h3><%= title %></h3>
+  <% productos.forEach(({ title, price, image, _id}) => { %> <%-
+  include("./productCard.ejs", {title, price, image, _id}) %> <% }) %>
+</div>
+

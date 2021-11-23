@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head") %>
+  <body>
+    <%- include("../partials/header", {showBar: true}) %>
+    <main class="main-notfound">
+      <h2 class="notfound-title">Error <%= status %>: <%= msg %></h2>
+      <a href="/" class="btn-home">Volver a home</a>
+
+      <%- include('../partials/productGroup', {productos:
+      productos.slice(0,4),title:"También te puede interesar"}) %>
+    </main>
+    <%- include("../partials/footer") %>
+  </body>
+  <script>
+    function imagenError(source) {
+      source.src = '/img/not_found.png'
+      source.onerror = ''
+      return true
+    }
+  </script>
+</html>

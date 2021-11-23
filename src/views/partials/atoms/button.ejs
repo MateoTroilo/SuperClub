@@ -8,6 +8,6 @@
 <% } else if (type == "cart"){ %>
 <a href="/cart" class="btn-cart">
   <img src="/svg/cart.svg" alt="Carrito" />
-  <%- include("./cart-badge", {quantity: 3}) %>
+  <%- include("./cart-badge", {quantity: qty}) %>
 </a>
 <% } %>
