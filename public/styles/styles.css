@@ -1441,7 +1441,7 @@ h1 {
     max-width: none;
   }
 } */
-.warning, .warning-mail, .warning-password{
+.warning, .warning-mail, .warning-password, .login-warning{
   font-size: 1rem;
   padding-top: 10px;
 }
