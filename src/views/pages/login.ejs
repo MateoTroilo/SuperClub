@@ -9,8 +9,8 @@
         <div class="red-rectangle"></div>
         <form action="/login" method="post" class="login-container">
           <h2>¡Hola!</h2>
-          <input type="email" placeholder="Tu email" name="email" value="<%=
-          locals.old && old.email ? old.email : "" %>" /> <% if (locals.errors
+          <input id="login-email" type="email" placeholder="Tu email" name="email" value="<%=
+          locals.old && old.email ? old.email : "" %>" /><p class="login-warning"></p> <% if (locals.errors
           && locals.errors["email"]) { %>
           <p class="warning-text"><%= errors["email"].msg %></p>
           <% } %>
@@ -21,13 +21,12 @@
           <p class="warning-text"><%= errors["password"].msg %></p>
           <% } %>
 
-          <button>Iniciar Sesión</button>
+          <button id="button-session">Iniciar Sesión</button>
         </form>
         <div class="question">
-          <a href="/register"
-            >¿No tienes cuenta? <span class="underline">Regístrate</span></a
-          >
+          <a href="/register">¿No tienes cuenta? <span class="underline">Regístrate</span></a>
         </div>
+        <%- include("../partials/errorLogin.ejs") %> 
       </main>
     </div>
     <%- include("../partials/footer") %>
