@@ -245,7 +245,7 @@ body {
 
 .toDarkMode,
 .toLightMode,
-.logout {
+#logout {
   display: flex;
   gap: 0.8rem;
   margin-left: 1.6rem;
@@ -1103,6 +1103,9 @@ h1 {
   justify-content: space-between;
 }
 
+.menuUserContainer div div {
+  cursor: pointer;
+}
 /* Media Querys Responsive*/
 
 @media screen and (max-width: 414px) {
@@ -1123,6 +1126,7 @@ h1 {
     padding: 0.8rem;
     margin: 0;
   }
+
   .main-cart {
     position: relative;
     z-index: -1;

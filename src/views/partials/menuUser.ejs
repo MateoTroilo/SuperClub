@@ -4,10 +4,10 @@
     <p><%= locals.isLogged?.usuario %></p>
   </div>
   <div class="menuUserLinks">
-    <a href="/" class="inicio">Inicio</a>
-    <a href="#" class="miscompras">Mis Compras</a>
-    <a href="#" class="favoritos">Favoritos</a>
-    <a href="#" class="historial">Historial</a>
+    <div id="inicio">Inicio</div>
+    <div id="miscompras">Mis Compras</div>
+    <div id="favoritos">Favoritos</div>
+    <div id="historial">Historial</div>
   </div>
   <div class="menuUserSettings">
     <div class="changeTheme">
@@ -21,14 +21,11 @@
         <p>Cambiar a Tema Claro</p>
       </div>
     </div>
-    <a href="/logout" class="logout">
+    <div id="logout">
       <img src="/svg/logout.svg" alt="Cerrar Sesión" class="logout-icon" />
       Cerrar Sesión
-    </a>
+    </div>
   </div>
 </section>
 
 <!-- * Se implementó un cierre de sesión en el menú desplegable -->
-
-<!-- ! Errores encontrados en el menú desplegable en Mobile Version: -->
-<!-- !   - No se puede entrar a los links de los anchors (a) -->
