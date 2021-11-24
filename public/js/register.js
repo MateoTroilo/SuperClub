@@ -22,7 +22,7 @@ registerName?.addEventListener("keyup", () => {
         warning.style.color = "red"
         contenedorInput.classList.add("contenedor-input-warning")
     } else {
-        warning.innerHTML = "!great¡"
+        warning.innerHTML = "great"
         warning.style.color = "green"
         contenedorInput.classList.remove("contenedor-input-warning")
     }
@@ -39,7 +39,7 @@ registerMail?.addEventListener("click", () => {
 
 registerMail?.addEventListener("keyup", () => {
     if ((/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/).test(registerMail.value) === true) {
-        warningMail.innerHTML = "!great¡"
+        warningMail.innerHTML = "great"
         warningMail.style.color = "green"
         contenedorInputMail.classList.remove("contenedor-input-warning")
     } else {
@@ -71,7 +71,7 @@ registerPassword?.addEventListener("keyup", () => {
         contenedorInputPassword.classList.add("contenedor-input-warning")
     }
     else if ((/(?![a-zA-Z]*$)(?![0-9]*$)[a-zA-Z0-9]+/).test(registerPassword.value)) {
-        warningPassword.innerHTML = "!great¡";
+        warningPassword.innerHTML = "great";
         warningPassword.style.color = "green"
         contenedorInputPassword.classList.remove("contenedor-input-warning")
     } 
