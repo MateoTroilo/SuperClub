@@ -276,6 +276,42 @@ menuUser?.addEventListener("blur", () => {
     main.style.pointerEvents = "initial";
 });
 
+buttonProfile?.addEventListener("click", () => {
+    menuUser.classList.toggle("show");
+    if (window.innerWidth <= 414) {
+        menuUser.focus();
+        modalBlack.classList.add("showModalBlack");
+        modalBlack.style.width = `${window.innerWidth}px`;
+        modalBlack.style.height = `${window.innerHeight}px`;
+
+        main.style.pointerEvents = "none";
+    }
+});
+
+links?.forEach((link) => {
+    link?.addEventListener("click", () => {
+        if (link.id === "inicio") return (window.location.href = "/");
+        if (link.id === "miscompras") return (window.location.href = "/cart");
+        window.location.href = "#";
+        console.log("me reclickeraon crak");
+    });
+});
+
+logout?.addEventListener("click", () => {
+    window.location.href = "/logout";
+});
+
+menuUser?.addEventListener("click", (e) => {
+    e.stopPropagation();
+});
+
+menuUser?.addEventListener("blur", () => {
+    console.log("mega blurbeadi");
+    menuUser.classList.remove("show");
+    modalBlack.classList.remove("showModalBlack");
+    main.style.pointerEvents = "initial";
+});
+
 changeTheme?.addEventListener("click", () => {
     toggleTheme();
 });
