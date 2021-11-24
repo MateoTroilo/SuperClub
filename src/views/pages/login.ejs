@@ -9,7 +9,7 @@
         <div class="red-rectangle"></div>
         <form action="/login" method="post" class="login-container">
           <h2>¡Hola!</h2>
-          <input type="email" placeholder="Tu email" name="email" value="<%=
+          <input id="emailLogin" type="email" placeholder="Tu email" name="email" value="<%=
           locals.old && old.email ? old.email : "" %>" /> <% if (locals.errors
           && locals.errors["email"]) { %>
           <p class="warning-text"><%= errors["email"].msg %></p>
@@ -20,6 +20,10 @@
           <% if (locals.errors && locals.errors["password"]) { %>
           <p class="warning-text"><%= errors["password"].msg %></p>
           <% } %>
+          <div class="recuerdaUsuarioContainer">
+            <input type="checkbox" id="recordarUsuario" value="recordame" ></input>
+            <label for="recordarUsuario">Recuérdame</label>
+          </div>
 
           <button>Iniciar Sesión</button>
         </form>

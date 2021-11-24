@@ -139,3 +139,17 @@ const toggleTheme = () => {
 
   menuUser?.classList.toggle('dark-menu')
 }
+
+loginContainer.addEventListener('submit', (e) => {
+  const inputCheckBox = document.querySelector('#recordarUsuario')
+  const email = document.querySelector('#emailLogin')
+  if (!inputCheckBox?.checked) return localStorage.removeItem('recordame')
+  localStorage.setItem('recordame', email?.value)
+})
+window.addEventListener('load', (e) => {
+  const email = document.querySelector('#emailLogin')
+  const value = localStorage.getItem('recordame')
+  email && (email.value = value)
+  const inputCheckBox = document.querySelector('#recordarUsuario')
+  if (value) inputCheckBox?.checked = true
+})
