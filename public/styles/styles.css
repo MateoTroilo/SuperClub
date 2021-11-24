@@ -24,7 +24,7 @@ a {
 
 html {
   font-size: 10px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
 }
 
@@ -194,7 +194,7 @@ body {
 }
 
 .containerProductHero::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -317,7 +317,7 @@ body {
 }
 
 .productHeroGroup::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   width: 100vw;
@@ -366,13 +366,16 @@ body {
   object-position: center;
   width: 640px;
   height: 520px;
+  border-radius: 20px;
 }
+
 .imagenContainerProduct {
   width: 640px;
   height: 520px;
   margin: 8px 0;
   border-radius: 20px;
 }
+
 .currentSelect {
   border: 2px solid rgb(236, 0, 0);
 }
@@ -519,7 +522,7 @@ button,
 .btn-agregar,
 .btn-agregar-cart,
 .btn-home {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   width: auto;
   height: 3.2rem;
   background: rgba(73, 79, 81, 1);
@@ -537,7 +540,7 @@ button,
 .btn-agregar {
   margin-bottom: 16px;
   margin-top: 16px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   width: auto;
   height: 3.2rem;
   background: rgba(73, 79, 81, 1);
@@ -732,7 +735,7 @@ input {
   height: 3.2rem;
   border-radius: 1.6rem;
   color: var(--gris);
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   background: rgba(255, 255, 255, 1);
   border: 0.1rem solid var(--gris);
   padding: 0.8rem 1.6rem;
@@ -1378,62 +1381,3 @@ h1 {
     bottom: initial;
   }
 }
-
-/* @media screen and (max-width: 1050px) {
-  .footer {
-    flex-direction: column;
-    width: 100%;
-    height: 150px;
-    gap: 1.5rem;
-  }
-  .producto {
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-  }
-  .imagenContainerProduct {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .article-cart {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .product-cart {
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  .discount-cart {
-    flex-wrap: wrap;
-  }
-}
-
-@media screen and (max-width: 850px) {
-  .productHeroGroup {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 440px;
-  }
-  .ruta {
-    width: 100%;
-  }
-  .imagenContainerProduct {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  .imagenContainerProduct img {
-    width: 100%;
-    margin: 0 auto;
-  }
-  .containerProductGroup {
-    max-width: none;
-  }
-} */

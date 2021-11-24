@@ -9,6 +9,11 @@ const modalBlack = document.querySelector(".modalBlack");
 const footer = document.querySelector("footer");
 const header = document.querySelector("header");
 const productCard = document.querySelectorAll(".productCard");
+const productCardImagen = document.querySelectorAll(".productCardImagen");
+const imagenContainerProduct = document.querySelector(
+  ".imagenContainerProduct"
+);
+const recortada = document.querySelectorAll(".recortada");
 const menuUserSettings = document.querySelectorAll(".menuUserSettings img");
 const cart = document.querySelector(".cart");
 const mainCartAnchors = document.querySelectorAll(".main-cart a");
@@ -82,6 +87,18 @@ const makeDark = () => {
   mainCartAnchors?.forEach((anchor) => {
     anchor.style.color = "white";
   });
+
+  productCardImagen?.forEach((product) => {
+    product.style.backgroundColor = "white";
+  });
+
+  recortada?.forEach((mini) => {
+    mini.style.backgroundColor = "white";
+  });
+
+  imagenContainerProduct &&
+    (imagenContainerProduct.style.backgroundColor = "white");
+
   const children = cart ? [...cart.children] : [];
   children?.forEach((child) => {
     if (child.tagName !== "P" && child.tagName !== "DIV")
