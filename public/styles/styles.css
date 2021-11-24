@@ -1440,3 +1440,9 @@ h1 {
   border: 1px solid red;
 }
 
+.hover-disable {
+    background: rgba(73, 79, 81, 1);
+}
+.hover-disable:hover {
+    background: rgba(73, 79, 81, 1);
+}
