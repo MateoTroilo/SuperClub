@@ -121,18 +121,4 @@
     </main>
     <%- include('../partials/footer')%>
   </body>
-  <script>
-    function imagenError(source) {
-      source.src = "/img/not_found.png";
-      source.onerror = "";
-      return true;
-    }
-    const ImagenGrande = document.querySelector(".imagengrande");
-    const changeImage = (source) => {
-      const prevSelection = document.querySelector(".currentSelect");
-      ImagenGrande.src = source.src;
-      prevSelection.classList.remove("currentSelect");
-      source.classList.add("currentSelect");
-    };
-  </script>
 </html>
