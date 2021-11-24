@@ -283,140 +283,143 @@ buttonProfile?.addEventListener('click', () => {
     modalBlack.style.width = `${window.innerWidth}px`
     modalBlack.style.height = `${window.innerHeight}px`
 
-        main.style.pointerEvents = "none";
-    }
-});
+    main.style.pointerEvents = 'none'
+  }
+})
 
 links?.forEach((link) => {
-    link?.addEventListener("click", () => {
-        if (link.id === "inicio") return (window.location.href = "/");
-        if (link.id === "miscompras") return (window.location.href = "/cart");
-        window.location.href = "#";
-        console.log("me reclickeraon crak");
-    });
-});
+  link?.addEventListener('click', () => {
+    if (link.id === 'inicio') return (window.location.href = '/')
+    if (link.id === 'miscompras') return (window.location.href = '/cart')
+    window.location.href = '#'
+    console.log('me reclickeraon crak')
+  })
+})
 
-logout?.addEventListener("click", () => {
-    window.location.href = "/logout";
-});
+logout?.addEventListener('click', () => {
+  window.location.href = '/logout'
+})
 
-menuUser?.addEventListener("click", (e) => {
-    e.stopPropagation();
-});
+menuUser?.addEventListener('click', (e) => {
+  e.stopPropagation()
+})
 
-menuUser?.addEventListener("blur", () => {
-    console.log("mega blurbeadi");
-    menuUser.classList.remove("show");
-    modalBlack.classList.remove("showModalBlack");
-    main.style.pointerEvents = "initial";
-});
+menuUser?.addEventListener('blur', () => {
+  console.log('mega blurbeadi')
+  menuUser.classList.remove('show')
+  modalBlack.classList.remove('showModalBlack')
+  main.style.pointerEvents = 'initial'
+})
 
-changeTheme?.addEventListener("click", () => {
-    toggleTheme();
-});
+changeTheme?.addEventListener('click', () => {
+  toggleTheme()
+})
 
 const toggleTheme = () => {
-    if (main.classList.contains("dark")) {
-        lightMode && (lightMode.style.display = "none");
-        darkMode && (darkMode.style.display = "flex");
-        localStorage.setItem("temaPreferido", "light");
-    } else {
-        lightMode && (lightMode.style.display = "flex");
-        darkMode && (darkMode.style.display = "none");
-        localStorage.setItem("temaPreferido", "dark");
-    }
-    console.log(localStorage.getItem("temaPreferido"));
-    const isDark = main.classList.toggle("dark-main");
-    menuUserSettings.forEach((img) => {
-        img.style.filter = isDark
-            ? `invert(100%) sepia(0%) saturate(4097%) hue-rotate(120deg)
+  if (main.classList.contains('dark')) {
+    lightMode && (lightMode.style.display = 'none')
+    darkMode && (darkMode.style.display = 'flex')
+    localStorage.setItem('temaPreferido', 'light')
+  } else {
+    lightMode && (lightMode.style.display = 'flex')
+    darkMode && (darkMode.style.display = 'none')
+    localStorage.setItem('temaPreferido', 'dark')
+  }
+  console.log(localStorage.getItem('temaPreferido'))
+  const isDark = main.classList.toggle('dark-main')
+  menuUserSettings.forEach((img) => {
+    img.style.filter = isDark
+      ? `invert(100%) sepia(0%) saturate(4097%) hue-rotate(120deg)
     brightness(111%) contrast(101%)`
-            : "";
-    });
-    cart?.classList.toggle("dark-cart");
-    footer.classList.toggle("dark-footer");
-    header.classList.toggle("dark-header");
-    productCard?.forEach((product) => {
-        product?.classList.toggle("dark-article");
-    });
-    mainCartAnchors?.forEach((anchor) => {
-        anchor.style.color = isDark ? "white" : "black";
-    });
-    const children = cart ? [...cart.children] : [];
-    children?.forEach((child) => {
-        if (child.tagName !== "P" && child.tagName !== "DIV")
-            child.classList.toggle("dark-article");
+      : ''
+  })
+  cart?.classList.toggle('dark-cart')
+  footer.classList.toggle('dark-footer')
+  header.classList.toggle('dark-header')
+  productCard?.forEach((product) => {
+    product?.classList.toggle('dark-article')
+  })
+  mainCartAnchors?.forEach((anchor) => {
+    anchor.style.color = isDark ? 'white' : 'black'
+  })
+  const children = cart ? [...cart.children] : []
+  children?.forEach((child) => {
+    if (child.tagName !== 'P' && child.tagName !== 'DIV')
+      child.classList.toggle('dark-article')
 
-        if (child.tagName === "A") child.style.color = "white";
-    });
-    cantBars?.forEach((btn) => {
-        btn.style.color = "black";
-    });
-    cartBtns?.forEach((button) => {
-        button.style.backgroundColor = isDark
-            ? "rgb(236,0,0)"
-            : "rgb(73,79,81)";
-    });
-    productMobile?.classList.toggle("dark-article");
-    btnAddCart?.forEach((btn) => {
-        btn.style.backgroundColor = "#222";
-    });
+    if (child.tagName === 'A') child.style.color = 'white'
+  })
+  cantBars?.forEach((btn) => {
+    btn.style.color = 'black'
+  })
+  cartBtns?.forEach((button) => {
+    button.style.backgroundColor = isDark ? 'rgb(236,0,0)' : 'rgb(73,79,81)'
+  })
+  productMobile?.classList.toggle('dark-article')
+  btnAddCart?.forEach((btn) => {
+    btn.style.backgroundColor = '#222'
+  })
 
-    rutaArnchor?.forEach((anchor) => {
-        anchor.style.color = isDark ? "white" : "black";
-    });
-    body.style.backgroundColor = isDark ? "#222" : "#efefef";
-    productDesktop?.classList.toggle("dark-article");
-    loginContainer?.classList.toggle("dark-article");
-    registerContainer?.classList.toggle("dark-article");
-    anchorRegisterQuestion &&
-        (anchorRegisterQuestion.style.color = isDark ? "white" : "black");
-    anchorQuestion && (anchorQuestion.style.color = isDark ? "white" : "black");
-    loginContainerButton &&
-        (loginContainerButton.style.backgroundColor = isDark
-            ? "#222"
-            : "#494F51");
-    registerContainerButton &&
-        (registerContainerButton.style.backgroundColor = isDark
-            ? "#222"
-            : "#494F51");
-    loginContainerInput?.forEach((input) => {
-        input.style.backgroundColor = isDark ? "#494f51" : "white";
-    });
-    registerContainerInput?.forEach((input) => {
-        input.style.backgroundColor = isDark ? "#494f51" : "white";
-    });
+  rutaArnchor?.forEach((anchor) => {
+    anchor.style.color = isDark ? 'white' : 'black'
+  })
+  body.style.backgroundColor = isDark ? '#222' : '#efefef'
+  productDesktop?.classList.toggle('dark-article')
+  loginContainer?.classList.toggle('dark-article')
+  registerContainer?.classList.toggle('dark-article')
+  anchorRegisterQuestion &&
+    (anchorRegisterQuestion.style.color = isDark ? 'white' : 'black')
+  anchorQuestion && (anchorQuestion.style.color = isDark ? 'white' : 'black')
+  loginContainerButton &&
+    (loginContainerButton.style.backgroundColor = isDark ? '#222' : '#494F51')
+  registerContainerButton &&
+    (registerContainerButton.style.backgroundColor = isDark
+      ? '#222'
+      : '#494F51')
+  loginContainerInput?.forEach((input) => {
+    input.style.backgroundColor = isDark ? '#494f51' : 'white'
+  })
+  registerContainerInput?.forEach((input) => {
+    input.style.backgroundColor = isDark ? '#494f51' : 'white'
+  })
 
   menuUser?.classList.toggle('dark-menu')
 }
 
-loginContainerButton?.classList.add("hover-disable");
-loginContainerButton && (loginContainerButton.style.opacity = "0.5");
-const loginInputs = loginContainerInput ? [...loginContainerInput] : [];
-loginContainerInput.forEach((input) => {
-    input.addEventListener("keyup", (e) => {
+loginContainerButton?.classList.add('hover-disable')
+loginContainerButton && (loginContainerButton.style.opacity = '0.5')
+const loginInputs = loginContainerInput ? [...loginContainerInput] : []
+loginContainerInput?.forEach((input) => {
+  input.addEventListener('keyup', (e) => {
+    console.log(e.currentTarget.value)
 
-        if (!loginInputs?.filter((x) => x?.value === "").length) {
-            console.log("entre");
-            loginContainerButton.disabled = false;
-            loginContainerButton.classList.remove("hover-disable");
-            loginContainerButton.style.opacity = "1";
-        }
-    });
-});
-registerContainerButton.classList.add("hover-disable");
-registerContainerButton && (registerContainerButton.style.opacity = "0.5");
-const registerInputs = registerContainerInput
-    ? [...registerContainerInput]
-    : [];
-registerContainerInput.forEach((input) => {
-    input.addEventListener("keyup", (e) => {
+    if (!loginInputs?.filter((x) => x?.value === '').length) {
+      loginContainerButton.disabled = false
+      loginContainerButton.classList.remove('hover-disable')
+      loginContainerButton.style.opacity = '1'
+    } else {
+      loginContainerButton.disabled = true
+      loginContainerButton.classList.add('hover-disable')
+      loginContainerButton.style.opacity = '0.5'
+    }
+  })
+})
 
-        if (!registerInputs?.filter((x) => x?.value === "").length) {
-            console.log("entre");
-            registerContainerButton.disabled = false;
-            registerContainerButton.classList.remove("hover-disable");
-            registerContainerButton.style.opacity = "1";
-        }
-    });
-});
+registerContainerButton?.classList.add('hover-disable')
+registerContainerButton && (registerContainerButton.style.opacity = '0.5')
+const registerInput = registerContainerInput ? [...registerContainerInput] : []
+registerContainerInput?.forEach((input) => {
+  input.addEventListener('keyup', (e) => {
+    console.log(e.currentTarget.value)
+
+    if (!registerInput?.filter((x) => x?.value === '').length) {
+      registerContainerButton.disabled = false
+      registerContainerButton.classList.remove('hover-disable')
+      registerContainerButton.style.opacity = '1'
+    } else {
+      registerContainerButton.disabled = true
+      registerContainerButton.classList.add('hover-disable')
+      registerContainerButton.style.opacity = '0.5'
+    }
+  })
+})
