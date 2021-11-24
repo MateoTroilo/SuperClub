@@ -16,5 +16,11 @@
       "usuario": "agusbernal",
       "email": "agusb@email.com",
       "password": "$2b$10$d1M4o4BKtv.kDUo47wckdeZqq9pB5oYaJDgSSV1MlW4oFSmhwSxlm"
+   },
+   {
+      "id": 4,
+      "usuario": "Mateo",
+      "email": "mateo@gmail.com",
+      "password": "$2b$10$Mh4l/RK9laYLg.om2gu6G.Br.Q.GQ002GYVtr1Pgq74zt9toE7NUu"
    }
 ]
