@@ -46,7 +46,6 @@ links?.forEach((link) => {
     if (link.id === "inicio") return (window.location.href = "/");
     if (link.id === "miscompras") return (window.location.href = "/cart");
     window.location.href = "#";
-    console.log("me reclickeraon crak");
   });
 });
 
@@ -59,7 +58,6 @@ menuUser?.addEventListener("click", (e) => {
 });
 
 menuUser?.addEventListener("blur", () => {
-  console.log("mega blurbeadi");
   menuUser.classList.remove("show");
   modalBlack.classList.remove("showModalBlack");
   main.style.pointerEvents = "initial";
@@ -193,7 +191,6 @@ window.addEventListener("load", () => {
 
 const toggleTheme = () => {
   changeText(isDarkMode());
-  console.log(localStorage.getItem("temaPreferido"));
   changeModes(isDarkMode());
 };
 
