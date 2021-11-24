@@ -395,7 +395,6 @@ loginContainerButton && (loginContainerButton.style.opacity = "0.5");
 const loginInputs = loginContainerInput ? [...loginContainerInput] : [];
 loginContainerInput.forEach((input) => {
     input.addEventListener("keyup", (e) => {
-        console.log(e.currentTarget.value);
 
         if (!loginInputs?.filter((x) => x?.value === "").length) {
             console.log("entre");
@@ -412,7 +411,6 @@ const registerInputs = registerContainerInput
     : [];
 registerContainerInput.forEach((input) => {
     input.addEventListener("keyup", (e) => {
-        console.log(e.currentTarget.value);
 
         if (!registerInputs?.filter((x) => x?.value === "").length) {
             console.log("entre");
