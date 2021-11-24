@@ -9,6 +9,7 @@ const controller = {
 
   postLogin: (req, res) => {
     const errors = validationResult(req)
+    console.log(req.body)
     if (!errors.isEmpty()) {
       res.render('pages/login', {
         errors: errors.mapped(),
@@ -16,24 +17,32 @@ const controller = {
       })
     } else {
       let users = user.obtenerUsuarios()
+      const errorsCurrent = errors.mapped()
       for (let i = 0; i < users.length; i++) {
-        if (
-          users[i].email == req.body.email &&
-          bcrypt.compareSync(req.body.password, users[i].password)
-        ) {
-          req.session.loggedUser = users[i]
-          return res.redirect(req.session?.history?.prev || '/')
+        if (users[i].email !== req.body.email) {
+          errorsCurrent.email = 'invalid email'
+          continue
         }
+
+        if (!bcrypt.compareSync(req.body.password, users[i].password)) {
+          errorsCurrent.password = 'invalid password'
+          continue
+        }
+
+        req.session.loggedUser = users[i]
+        return res.status(200).send({
+          msg: 'accepted',
+        })
       }
       if (!req.session.loggedUser) {
-        return res.render('pages/login', {
-          errors: errors.mapped(),
+        console.log()
+        return res.status(401).send({
+          errors: errorsCurrent,
           old: req.body,
         })
       }
     }
   },
 }
-
 
 module.exports = controller

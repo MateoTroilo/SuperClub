@@ -423,7 +423,7 @@ registerContainerInput?.forEach((input) => {
     }
   })
 })
-loginContainer.addEventListener('submit', (e) => {
+loginContainer?.addEventListener('submit', (e) => {
   const inputCheckBox = document.querySelector('#recordarUsuario')
   const email = document.querySelector('#emailLogin')
   if (!inputCheckBox?.checked) return localStorage.removeItem('recordame')

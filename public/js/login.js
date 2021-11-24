@@ -1,13 +1,32 @@
 let modalError = document.querySelector('.modal-error')
 let loginContainerLogin = document.querySelector('.login-container')
+let loginContainerLoginInputs = document.querySelectorAll(
+  '.login-container input'
+)
 let modalGrey = document.querySelector('.modal-grey')
 let loginEmail = document.querySelector('#login-email')
 let warningLogin = document.querySelector('.login-warning')
 let contenedorInputLogin = document.querySelector('.contenedor-input-login')
 
+const inputs = loginContainerLoginInputs ? [...loginContainerLoginInputs] : []
 loginContainerLogin?.addEventListener('submit', (e) => {
   e.preventDefault()
-  modalError.style.display = 'block'
+  const body = {}
+  inputs.forEach((input) => {
+    body[input.id] = input.value
+  })
+  fetch('/login', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(body),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.msg === 'accepted') {
+        return (window.location.href = document.referrer)
+      }
+      modalError.style.display = 'block'
+    })
 })
 
 modalGrey?.addEventListener('click', () => {
