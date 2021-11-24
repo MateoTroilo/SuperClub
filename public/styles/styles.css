@@ -536,12 +536,6 @@ button,
     transition: background-color 500ms;
     justify-content: center;
 }
-.hover-disable {
-    background: rgba(73, 79, 81, 1);
-}
-.hover-disable:hover {
-    background: rgba(73, 79, 81, 1);
-}
 
 .btn-agregar {
     margin-bottom: 16px;

@@ -390,21 +390,35 @@ const toggleTheme = () => {
   menuUser?.classList.toggle('dark-menu')
 }
 
-loginContainerButton.classList.add('hover-disable')
-loginContainerButton.style.opacity = '0.5'
-const loginInputs = loginContainerInput ? [...loginContainerInput] : []
+loginContainerButton?.classList.add("hover-disable");
+loginContainerButton && (loginContainerButton.style.opacity = "0.5");
+const loginInputs = loginContainerInput ? [...loginContainerInput] : [];
 loginContainerInput.forEach((input) => {
-  input.addEventListener('keyup', (e) => {
-    console.log(e.currentTarget.value)
+    input.addEventListener("keyup", (e) => {
+        console.log(e.currentTarget.value);
 
-    if (!loginInputs?.filter((x) => x?.value === '').length) {
-      loginContainerButton.disabled = false
-      loginContainerButton.classList.remove('hover-disable')
-      loginContainerButton.style.opacity = '1'
-    } else {
-      loginContainerButton.disabled = true
-      loginContainerButton.classList.add('hover-disable')
-      loginContainerButton.style.opacity = '0.5'
-    }
-  })
-})
+        if (!loginInputs?.filter((x) => x?.value === "").length) {
+            console.log("entre");
+            loginContainerButton.disabled = false;
+            loginContainerButton.classList.remove("hover-disable");
+            loginContainerButton.style.opacity = "1";
+        }
+    });
+});
+registerContainerButton.classList.add("hover-disable");
+registerContainerButton && (registerContainerButton.style.opacity = "0.5");
+const registerInputs = registerContainerInput
+    ? [...registerContainerInput]
+    : [];
+registerContainerInput.forEach((input) => {
+    input.addEventListener("keyup", (e) => {
+        console.log(e.currentTarget.value);
+
+        if (!registerInputs?.filter((x) => x?.value === "").length) {
+            console.log("entre");
+            registerContainerButton.disabled = false;
+            registerContainerButton.classList.remove("hover-disable");
+            registerContainerButton.style.opacity = "1";
+        }
+    });
+});
