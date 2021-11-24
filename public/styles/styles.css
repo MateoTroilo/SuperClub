@@ -24,7 +24,7 @@ a {
 
 html {
   font-size: 10px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
 }
 
@@ -196,7 +196,7 @@ body {
 }
 
 .containerProductHero::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -236,12 +236,16 @@ body {
   color: black;
   box-shadow: -2px 2px 13px 1px rgba(0, 0, 0, 0.5);
 }
+
 .toDarkMode img,
-.toLightMode img {
+.toLightMode img,
+.logout-icon {
   width: 1.6rem;
 }
+
 .toDarkMode,
-.toLightMode {
+.toLightMode,
+.logout {
   display: flex;
   gap: 0.8rem;
   margin-left: 1.6rem;
@@ -259,9 +263,11 @@ body {
   border-top: 1px solid var(--Gris);
   align-items: flex-start;
 }
-.menuUserProfile img {
+
+.menuUserProfilePic {
   width: 3.2rem;
 }
+
 .menuUserProfile {
   display: flex;
   align-items: center;
@@ -312,7 +318,7 @@ body {
 }
 
 .productHeroGroup::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   width: 100vw;
@@ -514,7 +520,7 @@ button,
 .btn-agregar,
 .btn-agregar-cart,
 .btn-home {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   width: auto;
   height: 3.2rem;
   background: rgba(73, 79, 81, 1);
@@ -532,7 +538,7 @@ button,
 .btn-agregar {
   margin-bottom: 16px;
   margin-top: 16px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   width: auto;
   height: 3.2rem;
   background: rgba(73, 79, 81, 1);
@@ -566,7 +572,7 @@ button,
   display: flex;
   top: 36px;
   right: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .btn-cart {
@@ -669,7 +675,7 @@ button:hover,
   align-items: center;
   justify-content: space-between;
   border-bottom: 0.15rem solid var(--gris);
-  z-index: 1;
+  z-index: 2;
 }
 
 .logo,
@@ -727,7 +733,7 @@ input {
   height: 3.2rem;
   border-radius: 1.6rem;
   color: var(--gris);
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   background: rgba(255, 255, 255, 1);
   border: 0.1rem solid var(--gris);
   padding: 0.8rem 1.6rem;

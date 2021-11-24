@@ -1,6 +1,6 @@
 <section class="menuUserContainer" tabindex="1">
   <div class="menuUserProfile">
-    <img src="/img/profile-pic.png" alt="olivia" />
+    <img src="/img/profile-pic.png" alt="usuario" class="menuUserProfilePic" />
     <p><%= locals.isLogged?.usuario %></p>
   </div>
   <div class="menuUserLinks">
@@ -9,14 +9,27 @@
     <a href="#" class="favoritos">Favoritos</a>
     <a href="#" class="historial">Historial</a>
   </div>
-  <div>
-    <div class="toDarkMode">
-      <img src="/svg/brightness-4.svg" alt="" />
-      <p>Cambiar a Tema Oscuro</p>
+  <div class="menuUserSettings">
+    <div class="changeTheme">
+      <div class="toDarkMode">
+        <img src="/svg/brightness-4.svg" alt="" />
+        <p>Cambiar a Tema Oscuro</p>
+      </div>
+
+      <div class="toLightMode">
+        <img src="/svg/brightness-7.svg" alt="" />
+        <p>Cambiar a Tema Claro</p>
+      </div>
     </div>
-    <div class="toLightMode">
-      <img src="/svg/brightness-7.svg" alt="" />
-      <p>Cambiar a Tema Claro</p>
-    </div>
+    <a href="/logout" class="logout">
+      <img src="/svg/logout.svg" alt="Cerrar Sesión" class="logout-icon" />
+      Cerrar Sesión
+    </a>
   </div>
 </section>
+
+<!-- * Se implementó un cierre de sesión en el menú desplegable -->
+
+<!-- ! Errores encontrados en el menú desplegable en Mobile Version: -->
+<!-- !   - No se puede entrar a los links de los anchors (a) -->
+<!-- !   - No se abre bien en la página de cart (tanto si hay o no hay productos) -->

@@ -10,5 +10,11 @@
       "usuario": "marcoar",
       "email": "falsofalsisimo@gmail.com",
       "password": "$2a$10$xqrZ5IJOpp5oYDzkWBHzOOOZJmQIl3LYwnWd9GkDhOSR50XPp953W"
+   },
+   {
+      "id": 3,
+      "usuario": "agusbernal",
+      "email": "agusb@email.com",
+      "password": "$2b$10$d1M4o4BKtv.kDUo47wckdeZqq9pB5oYaJDgSSV1MlW4oFSmhwSxlm"
    }
 ]
