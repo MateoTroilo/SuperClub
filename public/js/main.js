@@ -35,17 +35,17 @@ const buyButton = document.querySelector('.cart .buy-button')
 const dialog = document.querySelector('.dialog')
 const dialogAccept = document.querySelector('.dialog-accept')
 
-buttonProfile?.addEventListener("click", () => {
-    menuUser.classList.toggle("show");
-    if (window.innerWidth <= 414) {
-        menuUser.focus();
-        modalBlack.classList.add("showModalBlack");
-        modalBlack.style.width = `${window.innerWidth}px`;
-        modalBlack.style.height = `${window.innerHeight}px`;
+buttonProfile?.addEventListener('click', () => {
+  menuUser.classList.toggle('show')
+  if (window.innerWidth <= 414) {
+    menuUser.focus()
+    modalBlack.classList.add('showModalBlack')
+    modalBlack.style.width = `${window.innerWidth}px`
+    modalBlack.style.height = `${window.innerHeight}px`
 
-        main.style.pointerEvents = "none";
-    }
-});
+    main.style.pointerEvents = 'none'
+  }
+})
 
 links?.forEach((link) => {
   link?.addEventListener('click', () => {
@@ -55,13 +55,13 @@ links?.forEach((link) => {
   })
 })
 
-logout?.addEventListener("click", () => {
-    window.location.href = "/logout";
-});
+logout?.addEventListener('click', () => {
+  window.location.href = '/logout'
+})
 
-menuUser?.addEventListener("click", (e) => {
-    e.stopPropagation();
-});
+menuUser?.addEventListener('click', (e) => {
+  e.stopPropagation()
+})
 
 menuUser?.addEventListener('blur', () => {
   menuUser.classList.remove('show')
@@ -69,9 +69,9 @@ menuUser?.addEventListener('blur', () => {
   main.style.pointerEvents = 'initial'
 })
 
-changeTheme?.addEventListener("click", () => {
-    toggleTheme();
-});
+changeTheme?.addEventListener('click', () => {
+  toggleTheme()
+})
 
 const makeDark = () => {
   main.classList.add('dark-main')
@@ -347,12 +347,12 @@ registerContainerInput?.forEach((input) => {
 })
 loginContainer?.addEventListener('submit', (e) => {
   const inputCheckBox = document.querySelector('#recordarUsuario')
-  const email = document.querySelector('#emailLogin')
+  const email = document.querySelector('#email')
   if (!inputCheckBox?.checked) return localStorage.removeItem('recordame')
   localStorage.setItem('recordame', email?.value)
 })
 window.addEventListener('load', (e) => {
-  const email = document.querySelector('#emailLogin')
+  const email = document.querySelector('#email')
   const value = localStorage.getItem('recordame')
   email && (email.value = value)
   const inputCheckBox = document.querySelector('#recordarUsuario')
@@ -362,7 +362,6 @@ window.addEventListener('load', (e) => {
 })
 
 buyButton?.addEventListener('click', (e) => {
-  console.log('asddd')
   if (!dialog.classList.contains('show-alert'))
     dialog.classList.toggle('show-alert')
 })
