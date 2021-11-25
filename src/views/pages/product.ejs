@@ -3,7 +3,8 @@
   <!-- <link rel="stylesheet" href="/styles/productID.css" /> -->
   <%- include('../partials/head') %>
   <body class="body">
-    <%- include('../partials/header', {showBar: true}) %>
+    <%- include('../partials/header', {showBar: true, showSantanderLogo: true})
+    %>
     <main class="homenico">
       <div class="ruta">
         <a href="/"><i class="fas fa-arrow-left"></i> Volver al listado</a>
@@ -11,6 +12,57 @@
           ><i class="fas fa-chevron-right"></i> <%- producto.category %>
         </a>
       </div>
+
+      <section class="product-mobile">
+        <div class="nombre">
+          <%- producto.title.replace(/uds/i,"Unidades") %>
+        </div>
+        <img
+          src="<%- producto.image %> "
+          class="imagengrande"
+          onerror="imagenError(this)"
+        />
+
+        <div class="mini-imgs">
+          <img
+            class="recortada currentSelect"
+            width="48px"
+            height="48px"
+            src="<%- producto.image %>"
+            onerror="imagenError(this)"
+            onclick="changeImage(this)"
+          />
+          <% producto.gallery.forEach(img => { %>
+          <img
+            class="recortada"
+            width="48px"
+            height="48px"
+            src="<%- img %> "
+            onclick="changeImage(this)"
+            onerror="imagenError(this)"
+          />
+          <% }) %>
+        </div>
+        <div class="puntoyprecio">
+          <strong class="precio"
+            ><%- producto.price.toLocaleString() %>
+          </strong>
+          <div class="puntos">PUNTOS <br />SUPERCLUB</div>
+        </div>
+        <div class="descripcion">
+          <p><%- producto.description %></p>
+        </div>
+        <form action="/cart" method="post">
+          <button
+            name="product"
+            class="btn-agregar-cart"
+            value="<%- producto._id %>"
+          >
+            Agregar al Carrito
+          </button>
+        </form>
+      </section>
+
       <section class="producto">
         <div class="mini-imgs">
           <img
@@ -49,7 +101,6 @@
             </strong>
             <div class="puntos">PUNTOS <br />SUPERCLUB</div>
           </div>
-          <
           <form action="/cart" method="post">
             <button
               name="product"
@@ -70,18 +121,4 @@
     </main>
     <%- include('../partials/footer')%>
   </body>
-  <script>
-    function imagenError(source) {
-      source.src = '/img/not_found.png'
-      source.onerror = ''
-      return true
-    }
-    const ImagenGrande = document.querySelector('.imagengrande')
-    const changeImage = (source) => {
-      const prevSelection = document.querySelector('.currentSelect')
-      ImagenGrande.src = source.src
-      prevSelection.classList.remove('currentSelect')
-      source.classList.add('currentSelect')
-    }
-  </script>
 </html>

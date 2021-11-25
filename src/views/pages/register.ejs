@@ -3,8 +3,8 @@
 <%- include("../partials/head.ejs") %> 
 <body>
     <div>
-        <%- include("../partials/header.ejs", {showBar:false}) %> 
-        <main>
+        <%- include("../partials/header.ejs", {showBar:false, showSantanderLogo:false }) %> 
+        <main class="main-login">
             <div class="red"></div>
             <div class="register">
                 <h1>¡Registrate!</h1>
@@ -13,24 +13,28 @@
                     <% if (locals.msgExito) { %>
                         <p class="success-text"><%= msgExito %> </p>
                     <% } %>
-                    <input  class="register-input" type="text" name="usuario" placeholder="Tu nombre" value="<%= locals.old && old.usuario? old.usuario : "" %>"></input>
+                    <div class= "contenedor-input"><input  id="register-name" class="register-input" type="text" name="usuario" placeholder="Tu nombre " value="<%= locals.old && old.usuario? old.usuario : "" %>"></input><p class="warning"></p></div>
                     <% if (locals.errors && locals.errors["usuario"]) { %>
                         <p class="warning-text"><%= errors["usuario"].msg %> </p>
                     <% } %>
-                    <input  class="register-input" type="email" name="email" placeholder="Tu email" value="<%= locals.old && old.email? old.email : "" %>"></input>
+                    <div class= "contenedor-input-mail"><input  id="register-mail" class="register-input" type="email" name="email" placeholder="Tu email" value="<%= locals.old && old.email? old.email : "" %>"></input><p class="warning-mail"></p></div>
                     <% if (locals.errors && locals.errors["email"]) { %>
                         <p class="warning-text"><%= errors["email"].msg %> </p>
                     <% } %>
-                    <input  class="register-input" type="text" name="password" placeholder="Tu contraseña"></input>
+                    <div class= "contenedor-input-password"><input  id="register-password" class="register-input" type="text" name="password" placeholder="Tu contraseña"></input><p class="warning-password"></p></div>
                     <% if (locals.errors && locals.errors["password"]) { %>
                         <p class="warning-text"><%= errors["password"].msg %> </p>
                     <% } %>
-                    <button class="register-button" type="submit">Crear cuenta</button>
+                    <button disabled class="register-button"type="submit">Crear cuenta</button>
                 </form>
             </div>
             <a href="/login"><p class="texto-register">¿Ya tienes cuenta? <span class="underline">Inicia Sesión</span></p></a>
         </main>
+
+        
     </div>
+    <%- include("../partials/errorLogin") %> 
     <%- include("../partials/footer.ejs") %> 
+    
 </body>
 </html>

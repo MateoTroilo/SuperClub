@@ -1,9 +1,23 @@
 <header class="header">
+  <% if (showSantanderLogo) { %>
   <a href="/">
-    <img src="/svg/santanderLogo.svg" alt="Logo de Santander" class="logo"
-  /></a>
-  <% if(showBar) { %> <%- include("../partials/atoms/input", {type: "search",
-  placeholder: "Buscar productos..."}) %>
+    <img src="/svg/santanderLogo.svg" alt="Logo de Santander" class="logo" />
+    <img
+      src="/svg/santanderIso.svg"
+      alt="Logo de Santander"
+      class="logo-reducido"
+    />
+  </a>
+  <% } else { %>
+  <a href="/">
+    <img
+      src="/svg/santanderLogo.svg"
+      alt="Logo de Santander"
+      class="logo-sarpado"
+    />
+  </a>
+  <% } %> <% if(showBar) { %> <%- include("../partials/atoms/input", {type:
+  "search", placeholder: "Buscar productos..."}) %>
   <div class="cart-user">
     <% if (locals.isLogged) { %> <%- include("../partials/atoms/button",
     {type:"cart", qty: locals.qty}) %> <%- include("../partials/atoms/button",
@@ -14,4 +28,6 @@
     <% } %>
   </div>
   <% } %>
+  <div class="modalBlack"></div>
 </header>
+

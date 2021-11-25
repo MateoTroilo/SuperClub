@@ -2,7 +2,8 @@
 <html lang="en">
   <%- include('../partials/head') %>
   <body>
-    <%- include('../partials/header', {showBar: true}) %>
+    <%- include('../partials/header', {showBar: true, showSantanderLogo: true})
+    %>
     <main class="mainHome">
       <%- include("../partials/categoriesMenu.ejs") %> <%-
       include("../partials/productHeroGroup.ejs", { heros }) %>
@@ -18,11 +19,4 @@
     </main>
     <%- include("../partials/footer") %>
   </body>
-  <script>
-    function imagenError(source) {
-      source.src = '/img/not_found.png'
-      source.onerror = ''
-      return true
-    }
-  </script>
 </html>

@@ -1,7 +1,8 @@
 <% if(type === "profile") { %>
 <button class="btn-profile">
   <img src="<%= image %> " alt="Imagen de perfil" class="profile-pic" />
-  <%= name %>
+  <span class="profile-name"> <%= name %> </span>
+  <%- include("../../partials/menuUser") %>
 </button>
 <% } else if (type === "user") { %>
 <button class="btn-user"><%= name %></button>
