@@ -28,204 +28,194 @@ const loginContainerInput = document.querySelectorAll('.login-container input')
 const loginContainerButton = document.querySelector('.login-container button')
 const anchorQuestion = document.querySelector('.question a')
 const registerContainer = document.querySelector('.register')
-const anchorRegisterQuestion = document.querySelector('main a')
+const anchorRegisterQuestion = document.querySelector('.main-login a')
 const registerContainerInput = document.querySelectorAll('.register input')
 const registerContainerButton = document.querySelector('.register button')
 
-buttonProfile?.addEventListener('click', (e) => {
+buttonProfile?.addEventListener('click', () => {
   menuUser.classList.toggle('show')
-  menuUser.focus()
+  if (window.innerWidth <= 414) {
+    menuUser.focus()
+    modalBlack.classList.add('showModalBlack')
+    modalBlack.style.width = `${window.innerWidth}px`
+    modalBlack.style.height = `${window.innerHeight}px`
 
-  buttonProfile?.addEventListener('click', () => {
-    menuUser.classList.toggle('show')
-    if (window.innerWidth <= 414) {
-      menuUser.focus()
-      modalBlack.classList.add('showModalBlack')
-      modalBlack.style.width = `${window.innerWidth}px`
-      modalBlack.style.height = `${window.innerHeight}px`
-
-      main.style.pointerEvents = 'none'
-    }
-  })
-
-  links?.forEach((link) => {
-    link?.addEventListener('click', () => {
-      if (link.id === 'inicio') return (window.location.href = '/')
-      if (link.id === 'miscompras') return (window.location.href = '/cart')
-      window.location.href = '#'
-    })
-  })
-
-  logout?.addEventListener('click', () => {
-    window.location.href = '/logout'
-  })
-
-  menuUser?.addEventListener('click', (e) => {
-    e.stopPropagation()
-  })
-
-  menuUser?.addEventListener('blur', () => {
-    menuUser.classList.remove('show')
-    modalBlack.classList.remove('showModalBlack')
-    main.style.pointerEvents = 'initial'
-  })
-
-  changeTheme?.addEventListener('click', () => {
-    toggleTheme()
-  })
-
-  const makeDark = () => {
-    main.classList.add('dark-main')
-    menuUserSettings.forEach((img) => {
-      img.style.filter = `invert(100%) sepia(0%) saturate(4097%) hue-rotate(120deg)
-      brightness(111%) contrast(101%)`
-    })
-    cart?.classList.add('dark-cart')
-    footer.classList.add('dark-footer')
-    header.classList.add('dark-header')
-    productCard?.forEach((product) => {
-      product?.classList.add('dark-article')
-    })
-    mainCartAnchors?.forEach((anchor) => {
-      anchor.style.color = 'white'
-    })
-
-    productCardImagen?.forEach((product) => {
-      product.style.backgroundColor = 'white'
-    })
-
-    recortada?.forEach((mini) => {
-      mini.style.backgroundColor = 'white'
-    })
-
-    imagenContainerProduct &&
-      (imagenContainerProduct.style.backgroundColor = 'white')
-
-    const children = cart ? [...cart.children] : []
-    children?.forEach((child) => {
-      if (child.tagName !== 'P' && child.tagName !== 'DIV')
-        child.classList.add('dark-article')
-
-      if (child.tagName === 'A') child.style.color = 'white'
-    })
-    cantBars?.forEach((btn) => {
-      btn.style.color = 'black'
-    })
-    cartBtns?.forEach((button) => {
-      button.style.backgroundColor = 'rgb(236,0,0)'
-    })
-    productMobile?.classList.add('dark-article')
-    btnAddCart?.forEach((btn) => {
-      btn.style.backgroundColor = '#222'
-    })
-
-    rutaArnchor?.forEach((anchor) => {
-      anchor.style.color = 'white'
-    })
-    body.style.backgroundColor = '#222'
-    productDesktop?.classList.add('dark-article')
-    loginContainer?.classList.add('dark-article')
-    registerContainer?.classList.add('dark-article')
-    anchorRegisterQuestion && (anchorRegisterQuestion.style.color = 'black')
-    anchorQuestion && (anchorQuestion.style.color = 'black')
-    loginContainerButton &&
-      (loginContainerButton.style.backgroundColor = '#222')
-    registerContainerButton &&
-      (registerContainerButton.style.backgroundColor = '#222')
-    loginContainerInput?.forEach((input) => {
-      input.style.backgroundColor = '#494f51'
-    })
-    registerContainerInput?.forEach((input) => {
-      input.style.backgroundColor = '#494f51'
-    })
-
-    menuUser?.classList.add('dark-menu')
-  }
-
-  const makeLight = () => {
-    main.classList.remove('dark-main')
-    menuUserSettings.forEach((img) => {
-      img.style.filter = ''
-    })
-    cart?.classList.remove('dark-cart')
-    footer.classList.remove('dark-footer')
-    header.classList.remove('dark-header')
-    productCard?.forEach((product) => {
-      product?.classList.remove('dark-article')
-    })
-    mainCartAnchors?.forEach((anchor) => {
-      anchor.style.color = 'black'
-    })
-    const children = cart ? [...cart.children] : []
-    children?.forEach((child) => {
-      if (child.tagName !== 'P' && child.tagName !== 'DIV')
-        child.classList.remove('dark-article')
-
-      if (child.tagName === 'A') child.style.color = 'white'
-    })
-    cantBars?.forEach((btn) => {
-      btn.style.color = 'black'
-    })
-    cartBtns?.forEach((button) => {
-      button.style.backgroundColor = 'rgb(73,79,81)'
-    })
-    productMobile?.classList.remove('dark-article')
-    btnAddCart?.forEach((btn) => {
-      btn.style.backgroundColor = '#222'
-    })
-
-    rutaArnchor?.forEach((anchor) => {
-      anchor.style.color = 'black'
-    })
-    body.style.backgroundColor = '#efefef'
-    productDesktop?.classList.remove('dark-article')
-    loginContainer?.classList.remove('dark-article')
-    registerContainer?.classList.remove('dark-article')
-    anchorRegisterQuestion && (anchorRegisterQuestion.style.color = 'black')
-    anchorQuestion && (anchorQuestion.style.color = 'black')
-    loginContainerButton &&
-      (loginContainerButton.style.backgroundColor = '#494F51')
-    registerContainerButton &&
-      (registerContainerButton.style.backgroundColor = '#494F51')
-    loginContainerInput?.forEach((input) => {
-      input.style.backgroundColor = 'white'
-    })
-    registerContainerInput?.forEach((input) => {
-      input.style.backgroundColor = 'white'
-    })
-
-    menuUser?.classList.remove('dark-menu')
-  }
-
-  const changeModes = (flag) => {
-    if (flag) makeDark()
-    else makeLight()
-  }
-
-  const isDarkMode = () => localStorage.getItem('temaPreferido') === 'dark'
-
-  window.addEventListener('load', () => {
-    changeModes(isDarkMode())
-    changeText(!isDarkMode())
-  })
-
-  const toggleTheme = () => {
-    changeText(isDarkMode())
-    changeModes(isDarkMode())
-  }
-
-  const changeText = (flag) => {
-    if (flag) {
-      lightMode && (lightMode.style.display = 'none')
-      darkMode && (darkMode.style.display = 'flex')
-      localStorage.setItem('temaPreferido', 'light')
-    } else {
-      lightMode && (lightMode.style.display = 'flex')
-      darkMode && (darkMode.style.display = 'none')
-      localStorage.setItem('temaPreferido', 'dark')
-    }
+    main.style.pointerEvents = 'none'
   }
 })
+
+links?.forEach((link) => {
+  link?.addEventListener('click', () => {
+    if (link.id === 'inicio') return (window.location.href = '/')
+    if (link.id === 'miscompras') return (window.location.href = '/cart')
+    window.location.href = '#'
+  })
+})
+
+logout?.addEventListener('click', () => {
+  window.location.href = '/logout'
+})
+
+menuUser?.addEventListener('click', (e) => {
+  e.stopPropagation()
+})
+
+menuUser?.addEventListener('blur', () => {
+  menuUser.classList.remove('show')
+  modalBlack.classList.remove('showModalBlack')
+  main.style.pointerEvents = 'initial'
+})
+
+changeTheme?.addEventListener('click', () => {
+  toggleTheme()
+})
+
+const makeDark = () => {
+  main.classList.add('dark-main')
+  menuUserSettings.forEach((img) => {
+    img.style.filter = `invert(100%) sepia(0%) saturate(4097%) hue-rotate(120deg)
+      brightness(111%) contrast(101%)`
+  })
+  cart?.classList.add('dark-cart')
+  footer.classList.add('dark-footer')
+  header.classList.add('dark-header')
+  productCard?.forEach((product) => {
+    product?.classList.add('dark-article')
+  })
+  mainCartAnchors?.forEach((anchor) => {
+    anchor.style.color = 'white'
+  })
+
+  productCardImagen?.forEach((product) => {
+    product.style.backgroundColor = 'white'
+  })
+
+  recortada?.forEach((mini) => {
+    mini.style.backgroundColor = 'white'
+  })
+
+  imagenContainerProduct &&
+    (imagenContainerProduct.style.backgroundColor = 'white')
+
+  const children = cart ? [...cart.children] : []
+  children?.forEach((child) => {
+    if (child.tagName !== 'P' && child.tagName !== 'DIV')
+      child.classList.add('dark-article')
+
+    if (child.tagName === 'A') child.style.color = 'white'
+  })
+  cantBars?.forEach((btn) => {
+    btn.style.color = 'black'
+  })
+  cartBtns?.forEach((button) => {
+    button.style.backgroundColor = '#222'
+  })
+  productMobile?.classList.add('dark-article')
+  btnAddCart?.forEach((btn) => {
+    btn.style.backgroundColor = '#222'
+  })
+
+  rutaArnchor?.forEach((anchor) => {
+    anchor.style.color = 'white'
+  })
+  body.style.backgroundColor = '#222'
+  productDesktop?.classList.add('dark-article')
+  loginContainer?.classList.add('dark-article')
+  registerContainer?.classList.add('dark-article')
+  anchorRegisterQuestion && (anchorRegisterQuestion.style.color = 'white')
+  anchorQuestion && (anchorQuestion.style.color = 'white')
+  loginContainerButton && (loginContainerButton.style.backgroundColor = '#222')
+  registerContainerButton &&
+    (registerContainerButton.style.backgroundColor = '#222')
+  loginContainerInput?.forEach((input) => {
+    input.style.backgroundColor = '#494f51'
+  })
+  registerContainerInput?.forEach((input) => {
+    input.style.backgroundColor = '#494f51'
+  })
+
+  menuUser?.classList.add('dark-menu')
+}
+
+const makeLight = () => {
+  main.classList.remove('dark-main')
+  menuUserSettings.forEach((img) => {
+    img.style.filter = ''
+  })
+  cart?.classList.remove('dark-cart')
+  footer.classList.remove('dark-footer')
+  header.classList.remove('dark-header')
+  productCard?.forEach((product) => {
+    product?.classList.remove('dark-article')
+  })
+  mainCartAnchors?.forEach((anchor) => {
+    anchor.style.color = 'black'
+  })
+  const children = cart ? [...cart.children] : []
+  children?.forEach((child) => {
+    if (child.tagName !== 'P' && child.tagName !== 'DIV')
+      child.classList.remove('dark-article')
+
+    if (child.tagName === 'A') child.style.color = 'white'
+  })
+  cantBars?.forEach((btn) => {
+    btn.style.color = 'black'
+  })
+  cartBtns?.forEach((button) => {
+    button.style.backgroundColor = 'rgb(73,79,81)'
+  })
+  productMobile?.classList.remove('dark-article')
+  btnAddCart?.forEach((btn) => {
+    btn.style.backgroundColor = '#222'
+  })
+
+  rutaArnchor?.forEach((anchor) => {
+    anchor.style.color = 'black'
+  })
+
+  body.style.backgroundColor = '#efefef'
+  productDesktop?.classList.remove('dark-article')
+  loginContainer?.classList.remove('dark-article')
+  registerContainer?.classList.remove('dark-article')
+  anchorRegisterQuestion && (anchorRegisterQuestion.style.color = 'black')
+  anchorQuestion && (anchorQuestion.style.color = 'black')
+  loginContainerButton &&
+    (loginContainerButton.style.backgroundColor = '#494F51')
+  registerContainerButton &&
+    (registerContainerButton.style.backgroundColor = '#494F51')
+  loginContainerInput?.forEach((input) => {
+    input.style.backgroundColor = 'white'
+  })
+  registerContainerInput?.forEach((input) => {
+    input.style.backgroundColor = 'white'
+  })
+
+  menuUser?.classList.remove('dark-menu')
+}
+
+const changeModes = (flag) => {
+  if (flag) makeDark()
+  else makeLight()
+}
+
+const isDarkMode = () => localStorage.getItem('temaPreferido') === 'dark'
+
+const toggleTheme = () => {
+  changeText(isDarkMode())
+  changeModes(isDarkMode())
+}
+
+const changeText = (flag) => {
+  if (flag) {
+    lightMode && (lightMode.style.display = 'none')
+    darkMode && (darkMode.style.display = 'flex')
+    localStorage.setItem('temaPreferido', 'light')
+  } else {
+    lightMode && (lightMode.style.display = 'flex')
+    darkMode && (darkMode.style.display = 'none')
+    localStorage.setItem('temaPreferido', 'dark')
+  }
+}
 
 menuUser?.addEventListener('click', (e) => {
   e.stopPropagation()
@@ -311,81 +301,6 @@ menuUser?.addEventListener('blur', () => {
   main.style.pointerEvents = 'initial'
 })
 
-changeTheme?.addEventListener('click', () => {
-  toggleTheme()
-})
-
-const toggleTheme = () => {
-  if (main.classList.contains('dark')) {
-    lightMode && (lightMode.style.display = 'none')
-    darkMode && (darkMode.style.display = 'flex')
-    localStorage.setItem('temaPreferido', 'light')
-  } else {
-    lightMode && (lightMode.style.display = 'flex')
-    darkMode && (darkMode.style.display = 'none')
-    localStorage.setItem('temaPreferido', 'dark')
-  }
-  console.log(localStorage.getItem('temaPreferido'))
-  const isDark = main.classList.toggle('dark-main')
-  menuUserSettings.forEach((img) => {
-    img.style.filter = isDark
-      ? `invert(100%) sepia(0%) saturate(4097%) hue-rotate(120deg)
-    brightness(111%) contrast(101%)`
-      : ''
-  })
-  cart?.classList.toggle('dark-cart')
-  footer.classList.toggle('dark-footer')
-  header.classList.toggle('dark-header')
-  productCard?.forEach((product) => {
-    product?.classList.toggle('dark-article')
-  })
-  mainCartAnchors?.forEach((anchor) => {
-    anchor.style.color = isDark ? 'white' : 'black'
-  })
-  const children = cart ? [...cart.children] : []
-  children?.forEach((child) => {
-    if (child.tagName !== 'P' && child.tagName !== 'DIV')
-      child.classList.toggle('dark-article')
-
-    if (child.tagName === 'A') child.style.color = 'white'
-  })
-  cantBars?.forEach((btn) => {
-    btn.style.color = 'black'
-  })
-  cartBtns?.forEach((button) => {
-    button.style.backgroundColor = isDark ? 'rgb(236,0,0)' : 'rgb(73,79,81)'
-  })
-  productMobile?.classList.toggle('dark-article')
-  btnAddCart?.forEach((btn) => {
-    btn.style.backgroundColor = '#222'
-  })
-
-  rutaArnchor?.forEach((anchor) => {
-    anchor.style.color = isDark ? 'white' : 'black'
-  })
-  body.style.backgroundColor = isDark ? '#222' : '#efefef'
-  productDesktop?.classList.toggle('dark-article')
-  loginContainer?.classList.toggle('dark-article')
-  registerContainer?.classList.toggle('dark-article')
-  anchorRegisterQuestion &&
-    (anchorRegisterQuestion.style.color = isDark ? 'white' : 'black')
-  anchorQuestion && (anchorQuestion.style.color = isDark ? 'white' : 'black')
-  loginContainerButton &&
-    (loginContainerButton.style.backgroundColor = isDark ? '#222' : '#494F51')
-  registerContainerButton &&
-    (registerContainerButton.style.backgroundColor = isDark
-      ? '#222'
-      : '#494F51')
-  loginContainerInput?.forEach((input) => {
-    input.style.backgroundColor = isDark ? '#494f51' : 'white'
-  })
-  registerContainerInput?.forEach((input) => {
-    input.style.backgroundColor = isDark ? '#494f51' : 'white'
-  })
-
-  menuUser?.classList.toggle('dark-menu')
-}
-
 loginContainerButton?.classList.add('hover-disable')
 loginContainerButton && (loginContainerButton.style.opacity = '0.5')
 const loginInputs = loginContainerInput ? [...loginContainerInput] : []
@@ -435,4 +350,6 @@ window.addEventListener('load', (e) => {
   email && (email.value = value)
   const inputCheckBox = document.querySelector('#recordarUsuario')
   if (value) inputCheckBox && (inputCheckBox.checked = true)
+  changeModes(isDarkMode())
+  changeText(!isDarkMode())
 })
